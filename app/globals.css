@@ -29,8 +29,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Headings use the Reckless display face, matching the source deck */
+/* Investor-deck system: clean sans headings, tight tracking */
 h1,
-h2 {
-  font-family: var(--font-display);
+h2,
+h3 {
+  font-family: 'Helvetica Neue', Arial, system-ui, sans-serif;
+  letter-spacing: -0.015em;
 }
