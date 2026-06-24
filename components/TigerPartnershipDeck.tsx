@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 
-const TOTAL_SLIDES = 15
+const TOTAL_SLIDES = 14
 
 export const TigerPartnershipDeck = () => {
   const [current, setCurrent] = useState(0)
@@ -95,7 +95,7 @@ export const TigerPartnershipDeck = () => {
                   <div className="h-2 w-2 rounded-full bg-[#D2A62C]" />
                   <span className="font-mono text-xs tracking-widest text-[#D2A62C] uppercase">Bttr.</span>
                 </div>
-                <p className="text-xs text-neutral-400">Prepared for Matt Winter, CIO</p>
+                <p className="text-xs text-neutral-400">Prepared for Matt Winter, CIO &amp; Carmen Traub</p>
               </div>
             </div>
           </div>
@@ -130,8 +130,8 @@ export const TigerPartnershipDeck = () => {
         {/* 2: Tiger in 24 months */}
         <Slide index={2} current={current}>
           <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
-            <Label>The next 24 months</Label>
-            <h2 className="text-5xl font-bold text-white">What Tiger looks like in two years</h2>
+            <Label>The next six months</Label>
+            <h2 className="text-5xl font-bold text-white">What the next six months deliver, without spending again</h2>
             <div className="grid grid-cols-2 gap-x-10 gap-y-5">
               {[
                 ['Acquisitions onboarded in weeks', 'Not quarters. New companies plug into the existing platform.'],
@@ -161,11 +161,11 @@ export const TigerPartnershipDeck = () => {
               The question isn&rsquo;t whether to rebuild.
             </h2>
             <p className="max-w-4xl text-2xl leading-relaxed text-neutral-300">
-              It&rsquo;s how much faster Tiger can grow by building on what&rsquo;s already working.
+              It&rsquo;s whether it&rsquo;s worth paying to build it all again.
             </p>
             <p className="max-w-4xl text-sm leading-relaxed text-neutral-500">
-              The platform runs in production today, scales with the business, and already fits the way Tiger
-              grows. Everything that future needs is in place. The only decision is how quickly to use it.
+              The platform is already built, already paid for, and running in production today. Starting over
+              doesn&rsquo;t save money. It spends the same investment a second time, for the same result a year from now.
             </p>
           </div>
         </Slide>
@@ -266,7 +266,7 @@ export const TigerPartnershipDeck = () => {
         <Slide index={8} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <Label>The asset</Label>
-            <h2 className="text-5xl font-bold text-white">What Tiger actually built in six months</h2>
+            <h2 className="text-5xl font-bold text-white">What Bttr built last year</h2>
             <div className="grid grid-cols-2 gap-x-10 gap-y-3">
               {[
                 'Enterprise multi-brand platform',
@@ -274,7 +274,7 @@ export const TigerPartnershipDeck = () => {
                 'Product architecture for current and future divisions',
                 'Hosting and deployment infrastructure',
                 'Unified brand system',
-                'Product marketing framework',
+                'Product content framework',
                 'Governance and ownership model',
                 'Production workflows across teams',
               ].map((t) => (
@@ -285,34 +285,36 @@ export const TigerPartnershipDeck = () => {
               ))}
             </div>
             <p className="max-w-4xl text-base leading-relaxed text-neutral-400">
-              The technology was built in six months. The knowledge behind it was earned one decision at a time.
+              The platform was built last year. The knowledge behind it was earned one decision at a time.
             </p>
           </div>
         </Slide>
 
         {/* 9: Already embedded */}
         <Slide index={9} current={current}>
-          <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
-            <Label>The partnership today</Label>
-            <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
-              Bttr already runs as Tiger&rsquo;s platform and marketing team.
-            </h2>
-            <div className="grid grid-cols-4 gap-6">
+          <div className="flex h-full flex-col justify-center gap-9 bg-[#0a0a0a] px-20">
+            <div className="flex flex-col gap-1">
+              <Label>The partnership today</Label>
+              <h2 className="text-4xl font-bold text-white">This is a normal month.</h2>
+            </div>
+            <div className="grid grid-cols-3 gap-10">
               {[
-                ['230+', 'Emails in six months, most answered same day'],
-                ['50+', 'Discrete requests delivered, on a flat retainer'],
-                ['Every division', 'And 15+ stakeholders, coordinated by one team'],
-                ['Same day', 'Launch-day deadlines met without rush fees'],
-              ].map(([stat, label]) => (
-                <div key={label} className="flex flex-col gap-1">
-                  <span className="text-3xl font-bold text-[#D2A62C]">{stat}</span>
-                  <span className="text-xs leading-relaxed text-neutral-500">{label}</span>
+                ['~40', 'emails a month', 'most answered the same day'],
+                ['8+', 'requests delivered a month', 'on a flat retainer'],
+                ['$0', 'in rush fees or change orders', 'every launch deadline met'],
+              ].map(([stat, label, sub]) => (
+                <div key={label} className="flex flex-col gap-2">
+                  <span className="text-8xl font-bold leading-none tracking-tight text-[#D2A62C]">{stat}</span>
+                  <span className="text-lg font-semibold text-white">{label}</span>
+                  <span className="text-sm text-neutral-500">{sub}</span>
                 </div>
               ))}
             </div>
-            <p className="max-w-4xl text-sm leading-relaxed text-neutral-500">
-              Including a portfolio-wide brand system delivered at no charge to hold the brand together during a
-              period of change. This team is already the institutional memory of the platform.
+            <p className="max-w-5xl text-base leading-relaxed text-neutral-400">
+              Over six months: <span className="text-white">230+ emails</span>,{' '}
+              <span className="text-white">50+ requests delivered</span>, across{' '}
+              <span className="text-white">every division</span> and 15+ stakeholders, coordinated by one team,
+              plus a portfolio-wide brand system delivered at no charge.
             </p>
           </div>
         </Slide>
@@ -321,7 +323,7 @@ export const TigerPartnershipDeck = () => {
         <Slide index={10} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <Label>What replacement actually costs</Label>
-            <h2 className="text-5xl font-bold text-white">A new team inherits the code. Not the context.</h2>
+            <h2 className="text-5xl font-bold text-white">The code can be handed off. The context cannot.</h2>
             <div className="grid grid-cols-2 gap-x-10 gap-y-3 pt-1">
               {[
                 'Hundreds of strategic decisions',
@@ -390,41 +392,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 12: The real choice — rebuild vs continue */}
+        {/* 12: Roadmap */}
         <Slide index={12} current={current}>
-          <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
-            <Label>The real choice</Label>
-            <h2 className="text-5xl font-bold text-white">It is not about design. It is about time.</h2>
-            <div className="grid grid-cols-2 gap-6">
-              <div className="flex flex-col gap-3 rounded-xl border border-neutral-800 bg-neutral-900 p-6">
-                <span className="font-mono text-xs uppercase tracking-widest text-neutral-500">Start over</span>
-                <div className="flex flex-col gap-2">
-                  {[
-                    '6 to 12 months rediscovering platform decisions',
-                    'A new vendor learning curve',
-                    'Rebuilding the content models',
-                    'Rebuilding governance and integrations',
-                    'Rebuilding the brand system',
-                  ].map((t) => (
-                    <span key={t} className="text-sm text-neutral-400">&ndash; {t}</span>
-                  ))}
-                </div>
-              </div>
-              <div className="flex flex-col gap-3 rounded-xl border border-[#D2A62C]/30 bg-[#D2A62C]/10 p-6">
-                <span className="font-mono text-xs uppercase tracking-widest text-[#D2A62C]">Continue</span>
-                <div className="flex flex-col gap-2">
-                  {['New brands', 'New products', 'New experiences'].map((t) => (
-                    <span key={t} className="text-sm text-neutral-200">&ndash; {t}</span>
-                  ))}
-                </div>
-                <span className="mt-2 text-lg font-semibold text-white">Starting next month.</span>
-              </div>
-            </div>
-          </div>
-        </Slide>
-
-        {/* 13: Roadmap */}
-        <Slide index={13} current={current}>
           <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
             <Label>Where we go together</Label>
             <h2 className="text-5xl font-bold text-white">The Tiger roadmap, 2026 &ndash; 2027</h2>
@@ -451,8 +420,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 14: Close */}
-        <Slide index={14} current={current}>
+        {/* 13: Close */}
+        <Slide index={13} current={current}>
           <div className="relative flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
             <div
               className="absolute inset-0 opacity-[0.04]"
