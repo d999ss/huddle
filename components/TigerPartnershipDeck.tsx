@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 
-const TOTAL_SLIDES = 15
+const TOTAL_SLIDES = 14
 
 export const TigerPartnershipDeck = () => {
   const [current, setCurrent] = useState(0)
@@ -75,10 +75,10 @@ export const TigerPartnershipDeck = () => {
         <Slide index={0} current={current}>
           <div className="relative flex h-full flex-col justify-end bg-[#0a0a0a]">
             <div className="absolute inset-0">
-              <video autoPlay muted loop playsInline className="h-full w-full object-cover">
+              <video autoPlay muted loop playsInline className="h-full w-full scale-[1.03] object-cover">
                 <source src="/assets/work/uploads/2024/08/tiger-hero.mp4" type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] from-15% via-[#0a0a0a]/55 to-transparent" />
             </div>
             <div className="relative flex items-end justify-between px-20 pb-16">
               <div className="flex flex-col gap-5">
@@ -101,7 +101,7 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 1: What you asked for */}
+        {/* 1: Agenda — the four questions */}
         <Slide index={1} current={current}>
           <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
             <Label>What you asked for</Label>
@@ -128,8 +128,165 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 2: The shift — lead idea */}
+        {/* 2: Q1 — Services delivered */}
         <Slide index={2} current={current}>
+          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
+            <div className="flex items-center gap-4">
+              <Badge>01</Badge>
+              <div className="flex flex-col">
+                <Label>Services delivered</Label>
+                <h2 className="text-4xl font-bold text-white">Everything purchased is built and live today.</h2>
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-5">
+              {[
+                ['Corporate platform', 'Tiger BioSciences ecosystem site, launched December 2025'],
+                ['Divisional content', 'Wound Care, Aesthetics, Tissue Processing, International'],
+                ['Product library', 'Structured, compliant product experiences across the portfolio'],
+                ['Company & leadership', 'Leadership, company, news, careers, all maintained'],
+                ['Brand & imagery', 'Unified visual system and ongoing art direction'],
+                ['Ongoing support', 'Daily development and creative support'],
+              ].map(([t, d]) => (
+                <div key={t} className="flex flex-col gap-1.5 rounded-xl border border-neutral-800 bg-neutral-900 p-5">
+                  <h3 className="text-sm font-semibold text-white">{t}</h3>
+                  <p className="text-xs leading-relaxed text-neutral-500">{d}</p>
+                </div>
+              ))}
+            </div>
+            <p className="max-w-4xl text-sm leading-relaxed text-neutral-400">
+              A complete platform in production today, not a project in progress.
+            </p>
+          </div>
+        </Slide>
+
+        {/* 3: Q2 — The CMS platform */}
+        <Slide index={3} current={current}>
+          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
+            <div className="flex items-center gap-4">
+              <Badge>02</Badge>
+              <div className="flex flex-col">
+                <Label>The CMS platform</Label>
+                <h2 className="text-4xl font-bold text-white">A custom enterprise CMS, built to carry every brand.</h2>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-8">
+              <div className="flex flex-col gap-2.5">
+                {[
+                  'Bespoke, secure headless CMS on Sanity',
+                  'Multi-brand, multi-division content model',
+                  'FDA, regulatory, and clinical fields structured and required',
+                  'Role-based editing with clear ownership',
+                ].map((t) => (
+                  <div key={t} className="flex items-center gap-3">
+                    <Check className="text-[#D2A62C]" />
+                    <span className="text-sm text-neutral-300">{t}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-col gap-3 rounded-xl border border-[#D2A62C]/30 bg-[#D2A62C]/10 p-6">
+                <span className="font-mono text-xs uppercase tracking-widest text-[#D2A62C]">The commitment</span>
+                <p className="text-sm leading-relaxed text-neutral-200">
+                  Architected from day one for multiple brands, business units, and acquisitions. Standing up a
+                  new brand is configuration, not reconstruction.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Slide>
+
+        {/* 4: Q3 — Hosting & infrastructure */}
+        <Slide index={4} current={current}>
+          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
+            <div className="flex items-center gap-4">
+              <Badge>03</Badge>
+              <div className="flex flex-col">
+                <Label>Hosting &amp; infrastructure</Label>
+                <h2 className="text-4xl font-bold text-white">Enterprise hosting, secured and built to scale.</h2>
+              </div>
+            </div>
+            <div className="grid grid-cols-4 gap-6">
+              {[
+                ['99.99%', 'Uptime SLA on redundant infrastructure'],
+                ['SOC 2 + HIPAA', 'Readiness alignment for regulated data'],
+                ['24 / 7', 'Monitoring with sub-2-hour incident response'],
+                ['AWS + Vercel', 'Multi-region delivery with failover'],
+              ].map(([stat, label]) => (
+                <div key={label} className="flex flex-col gap-1">
+                  <span className="text-2xl font-semibold text-[#D2A62C]">{stat}</span>
+                  <span className="text-xs leading-relaxed text-neutral-500">{label}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-x-8 gap-y-2 pt-1">
+              {['Twice-daily backups with full redundancy', 'Cloudflare DNS, DDoS protection, IP blocking', 'CI/CD with automated deploys and preview environments'].map((t) => (
+                <div key={t} className="flex items-center gap-2">
+                  <Check className="text-[#D2A62C]" />
+                  <span className="text-sm text-neutral-300">{t}</span>
+                </div>
+              ))}
+            </div>
+            <p className="max-w-4xl text-sm leading-relaxed text-neutral-400">
+              The reliability and security of an in-house platform team, carried entirely by Bttr.
+            </p>
+          </div>
+        </Slide>
+
+        {/* 5: Q4 — Technical designs */}
+        <Slide index={5} current={current}>
+          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
+            <div className="flex items-center gap-4">
+              <Badge>04</Badge>
+              <div className="flex flex-col">
+                <Label>Technical designs</Label>
+                <h2 className="text-4xl font-bold text-white">A documented design system and technical foundation.</h2>
+              </div>
+            </div>
+            <div className="grid grid-cols-4 gap-6">
+              {[
+                ['6', 'GitHub repositories under active management'],
+                ['1', 'Unified visual brand system'],
+                ['Full', 'Product and divisional component library'],
+                ['25+', 'Site sections built across the ecosystem'],
+              ].map(([stat, label]) => (
+                <div key={label} className="flex flex-col gap-1">
+                  <span className="text-2xl font-semibold text-[#D2A62C]">{stat}</span>
+                  <span className="text-xs leading-relaxed text-neutral-500">{label}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-x-8 gap-y-2 pt-1">
+              {['Governance and ownership model', 'Production workflows across teams', 'Documented and ready to extend'].map((t) => (
+                <div key={t} className="flex items-center gap-2">
+                  <Check className="text-[#D2A62C]" />
+                  <span className="text-sm text-neutral-300">{t}</span>
+                </div>
+              ))}
+            </div>
+            <p className="max-w-4xl text-sm leading-relaxed text-neutral-400">
+              New work arrives on-brand and on-architecture by default, not by cleanup.
+            </p>
+          </div>
+        </Slide>
+
+        {/* 6: The reframe */}
+        <Slide index={6} current={current}>
+          <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
+            <Label>The real question</Label>
+            <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
+              The question isn&rsquo;t whether to rebuild.
+            </h2>
+            <p className="max-w-4xl text-2xl leading-relaxed text-neutral-300">
+              It&rsquo;s whether it&rsquo;s worth paying to build it all again.
+            </p>
+            <p className="max-w-4xl text-sm leading-relaxed text-neutral-500">
+              The platform is already built, already paid for, and running in production today. Starting over
+              doesn&rsquo;t save money. It spends the same investment a second time, for the same result a year from now.
+            </p>
+          </div>
+        </Slide>
+
+        {/* 7: The shift */}
+        <Slide index={7} current={current}>
           <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
             <Label>Where this goes next</Label>
             <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
@@ -154,171 +311,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 3: Tiger in 24 months */}
-        <Slide index={3} current={current}>
-          <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
-            <Label>The next six months</Label>
-            <h2 className="text-5xl font-bold text-white">What the next six months deliver, without spending again</h2>
-            <div className="grid grid-cols-2 gap-x-10 gap-y-5">
-              {[
-                ['Acquisitions onboarded in weeks', 'Not quarters. New companies plug into the existing platform.'],
-                ['New brands from existing infrastructure', 'Launch a brand without building a new stack each time.'],
-                ['One source of truth for products', 'Every division pulling from the same structured library.'],
-                ['Consistent governance', 'One brand, one standard, enforced across the ecosystem.'],
-                ['Reduced operational overhead', 'Fewer vendors, fewer handoffs, fewer surprises.'],
-                ['Built to keep compounding', 'Each addition is cheaper and faster than the last.'],
-              ].map(([t, d]) => (
-                <div key={t} className="flex gap-3">
-                  <Check className="mt-0.5 text-[#D2A62C]" />
-                  <div>
-                    <p className="font-semibold text-white">{t}</p>
-                    <p className="text-sm text-neutral-500">{d}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Slide>
-
-        {/* 4: The reframe */}
-        <Slide index={4} current={current}>
-          <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
-            <Label>The real question</Label>
-            <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
-              The question isn&rsquo;t whether to rebuild.
-            </h2>
-            <p className="max-w-4xl text-2xl leading-relaxed text-neutral-300">
-              It&rsquo;s whether it&rsquo;s worth paying to build it all again.
-            </p>
-            <p className="max-w-4xl text-sm leading-relaxed text-neutral-500">
-              The platform is already built, already paid for, and running in production today. Starting over
-              doesn&rsquo;t save money. It spends the same investment a second time, for the same result a year from now.
-            </p>
-          </div>
-        </Slide>
-
-        {/* 5: Outcome — launch fast */}
-        <Slide index={5} current={current}>
-          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
-            <Label>Multi-brand platform &middot; already built</Label>
-            <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
-              New brands and business units launch without rebuilding anything.
-            </h2>
-            <div className="grid grid-cols-3 gap-6 pt-2">
-              {[
-                ['Shared content model', 'Every brand runs on the same structure, modeled once.'],
-                ['Onboarding is configuration', 'A new brand is set up, not reconstructed from zero.'],
-                ['Design system extends', 'The look and governance come with it, automatically.'],
-              ].map(([t, d]) => (
-                <div key={t} className="flex flex-col gap-1.5 rounded-xl border border-neutral-800 bg-neutral-900 p-5">
-                  <h3 className="text-sm font-semibold text-white">{t}</h3>
-                  <p className="text-xs leading-relaxed text-neutral-500">{d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Slide>
-
-        {/* 6: Outcome — compliant + fast */}
-        <Slide index={6} current={current}>
-          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
-            <Label>Regulated content model &middot; already built</Label>
-            <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
-              Every product page ships compliant, and marketing still moves fast.
-            </h2>
-            <div className="grid grid-cols-3 gap-6 pt-2">
-              {[
-                ['Compliance built into the model', 'FDA, regulatory, and clinical fields are structured and required before publish.'],
-                ['Consistent across every product', 'No page goes live missing the information it needs.'],
-                ['Speed without the risk', 'Marketing edits inside guardrails, so moving fast never means cutting corners.'],
-              ].map(([t, d]) => (
-                <div key={t} className="flex flex-col gap-1.5 rounded-xl border border-neutral-800 bg-neutral-900 p-5">
-                  <h3 className="text-sm font-semibold text-white">{t}</h3>
-                  <p className="text-xs leading-relaxed text-neutral-500">{d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Slide>
-
-        {/* 7: Outcome — reliability without an ops team */}
-        <Slide index={7} current={current}>
-          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
-            <Label>Managed infrastructure &middot; already running</Label>
-            <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
-              Enterprise reliability and security, without an internal ops team.
-            </h2>
-            <div className="grid grid-cols-4 gap-6 pt-2">
-              {[
-                ['99.99%', 'Uptime SLA on redundant infrastructure'],
-                ['SOC 2 + HIPAA', 'Readiness alignment for regulated data'],
-                ['24 / 7', 'Monitoring with sub-2-hour incident response'],
-                ['AWS + Vercel', 'Multi-region delivery with failover'],
-              ].map(([stat, label]) => (
-                <div key={label} className="flex flex-col gap-1">
-                  <span className="text-2xl font-semibold text-[#D2A62C]">{stat}</span>
-                  <span className="text-xs leading-relaxed text-neutral-500">{label}</span>
-                </div>
-              ))}
-            </div>
-            <p className="max-w-4xl text-sm leading-relaxed text-neutral-500">
-              Tiger gets the security posture and reliability of an in-house platform team, carried entirely by Bttr.
-            </p>
-          </div>
-        </Slide>
-
-        {/* 8: Outcome — governed brand */}
+        {/* 8: A normal month */}
         <Slide index={8} current={current}>
-          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
-            <Label>Brand &amp; design system &middot; already in place</Label>
-            <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
-              One consistent brand across every division, governed from one place.
-            </h2>
-            <div className="grid grid-cols-3 gap-6 pt-2">
-              {[
-                ['Unified visual system', 'A single brand language, documented and ready to extend.'],
-                ['One source of truth', 'Products, imagery, and messaging stay in sync everywhere.'],
-                ['New divisions inherit it', 'Every addition arrives on-brand by default, not by cleanup.'],
-              ].map(([t, d]) => (
-                <div key={t} className="flex flex-col gap-1.5 rounded-xl border border-neutral-800 bg-neutral-900 p-5">
-                  <h3 className="text-sm font-semibold text-white">{t}</h3>
-                  <p className="text-xs leading-relaxed text-neutral-500">{d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Slide>
-
-        {/* 9: What Tiger built in six months */}
-        <Slide index={9} current={current}>
-          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
-            <Label>The asset</Label>
-            <h2 className="text-5xl font-bold text-white">What Bttr built last year</h2>
-            <div className="grid grid-cols-2 gap-x-10 gap-y-3">
-              {[
-                'Enterprise multi-brand platform',
-                'Custom regulated content CMS',
-                'Product architecture for current and future divisions',
-                'Hosting and deployment infrastructure',
-                'Unified brand system',
-                'Product content framework',
-                'Governance and ownership model',
-                'Production workflows across teams',
-              ].map((t) => (
-                <div key={t} className="flex items-center gap-3">
-                  <Check className="text-[#D2A62C]" />
-                  <span className="text-base text-neutral-200">{t}</span>
-                </div>
-              ))}
-            </div>
-            <p className="max-w-4xl text-base leading-relaxed text-neutral-400">
-              The platform was built last year. The knowledge behind it was earned one decision at a time.
-            </p>
-          </div>
-        </Slide>
-
-        {/* 10: Already embedded */}
-        <Slide index={10} current={current}>
           <div className="flex h-full flex-col justify-center gap-9 bg-[#0a0a0a] px-20">
             <div className="flex flex-col gap-1">
               <Label>The partnership today</Label>
@@ -346,8 +340,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 11: What Tiger would be replacing */}
-        <Slide index={11} current={current}>
+        {/* 9: No clean handoff */}
+        <Slide index={9} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <Label>What replacement actually costs</Label>
             <h2 className="text-5xl font-bold text-white">There is no clean handoff.</h2>
@@ -373,8 +367,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 12: Tiger Investment Summary */}
-        <Slide index={12} current={current}>
+        {/* 10: Investment summary */}
+        <Slide index={10} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <Label>Tiger investment summary</Label>
             <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
@@ -423,8 +417,34 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 13: Roadmap */}
-        <Slide index={13} current={current}>
+        {/* 11: Next six months */}
+        <Slide index={11} current={current}>
+          <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
+            <Label>The next six months</Label>
+            <h2 className="text-5xl font-bold text-white">What the next six months deliver, without spending again</h2>
+            <div className="grid grid-cols-2 gap-x-10 gap-y-5">
+              {[
+                ['Acquisitions onboarded in weeks', 'Not quarters. New companies plug into the existing platform.'],
+                ['New brands from existing infrastructure', 'Launch a brand without building a new stack each time.'],
+                ['One source of truth for products', 'Every division pulling from the same structured library.'],
+                ['Consistent governance', 'One brand, one standard, enforced across the ecosystem.'],
+                ['Reduced operational overhead', 'Fewer vendors, fewer handoffs, fewer surprises.'],
+                ['Built to keep compounding', 'Each addition is cheaper and faster than the last.'],
+              ].map(([t, d]) => (
+                <div key={t} className="flex gap-3">
+                  <Check className="mt-0.5 text-[#D2A62C]" />
+                  <div>
+                    <p className="font-semibold text-white">{t}</p>
+                    <p className="text-sm text-neutral-500">{d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Slide>
+
+        {/* 12: Roadmap */}
+        <Slide index={12} current={current}>
           <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
             <Label>Where we go together</Label>
             <h2 className="text-5xl font-bold text-white">The Tiger roadmap, 2026 &ndash; 2027</h2>
@@ -451,8 +471,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 14: Close */}
-        <Slide index={14} current={current}>
+        {/* 13: Close */}
+        <Slide index={13} current={current}>
           <div className="relative flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
             <div
               className="absolute inset-0 opacity-[0.04]"
