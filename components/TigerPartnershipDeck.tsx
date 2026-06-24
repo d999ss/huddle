@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 
-const TOTAL_SLIDES = 14
+const TOTAL_SLIDES = 13
 
 export const TigerPartnershipDeck = () => {
   const [current, setCurrent] = useState(0)
@@ -340,35 +340,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 9: No clean handoff */}
+        {/* 9: Investment summary */}
         <Slide index={9} current={current}>
-          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
-            <Label>What replacement actually costs</Label>
-            <h2 className="text-5xl font-bold text-white">There is no clean handoff.</h2>
-            <div className="grid grid-cols-2 gap-x-10 gap-y-3 pt-1">
-              {[
-                'Hundreds of strategic decisions',
-                'Thousands of stakeholder interactions',
-                'Product positioning discussions',
-                'Regulatory content decisions',
-                'Brand governance decisions',
-                'Platform architecture decisions',
-              ].map((t) => (
-                <div key={t} className="flex items-center gap-3">
-                  <Check className="text-[#D2A62C]" />
-                  <span className="text-base text-neutral-200">{t}</span>
-                </div>
-              ))}
-            </div>
-            <p className="max-w-4xl text-base leading-relaxed text-neutral-400">
-              The code is entangled with thousands of decisions that live inside this team. A successor inherits
-              files, then spends months rediscovering what made them work, if it can be recovered at all.
-            </p>
-          </div>
-        </Slide>
-
-        {/* 10: Investment summary */}
-        <Slide index={10} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <Label>Tiger investment summary</Label>
             <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
@@ -417,8 +390,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 11: Next six months */}
-        <Slide index={11} current={current}>
+        {/* 10: Next six months */}
+        <Slide index={10} current={current}>
           <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
             <Label>The next six months</Label>
             <h2 className="text-5xl font-bold text-white">What the next six months deliver, without spending again</h2>
@@ -443,8 +416,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 12: Roadmap */}
-        <Slide index={12} current={current}>
+        {/* 11: Roadmap */}
+        <Slide index={11} current={current}>
           <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
             <Label>Where we go together</Label>
             <h2 className="text-5xl font-bold text-white">The Tiger roadmap, 2026 &ndash; 2027</h2>
@@ -471,8 +444,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 13: Close */}
-        <Slide index={13} current={current}>
+        {/* 12: Close */}
+        <Slide index={12} current={current}>
           <div className="relative flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
             <div
               className="absolute inset-0 opacity-[0.04]"
