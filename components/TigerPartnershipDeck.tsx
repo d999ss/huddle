@@ -80,7 +80,8 @@ export const TigerPartnershipDeck = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/55 to-transparent" />
             <div className="relative flex flex-col gap-5 px-24 pb-28">
               <h1 className="max-w-4xl text-6xl font-semibold leading-[1.05] tracking-tight">
-                <span className="text-white">Tiger BioSciences </span>
+                <span className="text-white">Tiger BioSciences</span>
+                <br />
                 <span className="text-neutral-500">Platform Review</span>
               </h1>
               <p className="max-w-2xl text-lg leading-relaxed text-balance text-neutral-400">
