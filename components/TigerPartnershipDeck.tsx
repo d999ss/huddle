@@ -121,10 +121,10 @@ export const TigerPartnershipDeck = () => {
             <SectionHead eyebrow="Services delivered" title="Everything is built and live today." />
             <div className="grid grid-cols-5 gap-8">
               {([
+                ['Platform', ['Custom Sanity CMS', 'Multi-brand model', 'AWS + Vercel hosting', 'CI/CD & staging', 'Security & backups', 'Cloudflare DNS + DDoS', 'Image pipeline & CDN', 'Role-based editing']],
                 ['Corporate site', ['Ecosystem homepage', 'Company & companies', 'Leadership & people', 'News & press room', 'Careers & contact', 'Donation', 'Vision & values', 'Global navigation & IA']],
                 ['Divisions', ['Wound Care', 'Aesthetics', 'Tissue Processing', 'International', 'Expertise pages', 'Dermatology landing', 'Division taxonomy', 'Cross-division routing']],
                 ['Products & science', ['Full product library', 'Product detail pages', 'Pipeline & publications', 'Clinical evidence', 'Research & gallery', 'Mechanism of action', 'Regulatory status', 'Treatment protocols']],
-                ['Platform', ['Custom Sanity CMS', 'Multi-brand model', 'AWS + Vercel hosting', 'CI/CD & staging', 'Security & backups', 'Cloudflare DNS + DDoS', 'Image pipeline & CDN', 'Role-based editing']],
                 ['Brand & operations', ['Visual brand system', 'Brand book & style guide', 'Logo & circle-logo system', 'Division logo set', 'Unified photography', 'Press publishing system', 'Survey integration', 'Daily dev + creative']],
               ] as [string, string[]][]).map(([cat, items]) => (
                 <div key={cat} className="flex flex-col gap-4">
@@ -225,10 +225,21 @@ export const TigerPartnershipDeck = () => {
                 </div>
               ))}
             </div>
-            <div className="flex gap-10 text-sm text-neutral-400">
-              <span>Governance and ownership model</span>
-              <span>Production workflows across teams</span>
-              <span>Documented and ready to extend</span>
+            <div className="grid grid-cols-3 gap-12">
+              {([
+                ['Design system', ['Unified visual language', 'Typography & color tokens', 'Component library', 'Layout & spacing system', 'Brand book & guidelines']],
+                ['Engineering', ['Next.js + TypeScript', 'Reusable component architecture', 'Versioned in 6 repositories', 'CI/CD & preview environments', 'Documented & maintained']],
+                ['Governance & operations', ['Ownership model', 'Production workflows', 'QA & review process', 'Asset & content pipeline', 'Ready to extend']],
+              ] as [string, string[]][]).map(([cat, items]) => (
+                <div key={cat} className="flex flex-col gap-4">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">{cat}</span>
+                  <div className="flex flex-col gap-3 border-t border-neutral-800 pt-4">
+                    {items.map((it) => (
+                      <span key={it} className="text-base leading-snug text-neutral-300">{it}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
             <Note>New work arrives on-brand and on-architecture by default, not by cleanup.</Note>
           </Frame>
@@ -270,6 +281,14 @@ export const TigerPartnershipDeck = () => {
                   <span className="text-sm text-neutral-500">{sub}</span>
                 </div>
               ))}
+            </div>
+            <div className="flex flex-col gap-4 pt-2">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">What that covers</span>
+              <div className="grid grid-cols-3 gap-x-12 gap-y-3 border-t border-neutral-800 pt-4">
+                {['Press releases posted', 'Homepage iterations', 'Product page updates', 'Imagery & asset sourcing', 'Bug fixes & QA', 'Brand & creative support'].map((it) => (
+                  <span key={it} className="text-base text-neutral-300">{it}</span>
+                ))}
+              </div>
             </div>
             <Note>
               Over six months: 230+ emails, 50+ requests delivered, across every division and 15+ stakeholders,
@@ -398,29 +417,35 @@ export const TigerPartnershipDeck = () => {
         {/* 11: Roadmap */}
         <Slide index={11} current={current}>
           <Frame page="12">
-            <SectionHead eyebrow="Where we go together" title="The Tiger roadmap, 2026 to 2027." />
-            <table className="w-full text-base">
-              <thead>
-                <tr className="bg-neutral-800/70 text-left text-neutral-300">
-                  <th className="w-40 px-4 py-2.5 font-normal">Quarter</th>
-                  <th className="px-4 py-2.5 font-normal">Initiatives</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ['Q3 2026', 'Biocare · Tiger Dermatology · Brand governance'],
-                  ['Q4 2026', 'Product ecosystem expansion · Division enhancements'],
-                  ['Q1 2027', 'Acquisition onboarding framework'],
-                  ['Q2 2027', 'AI-enabled content operations'],
-                ].map(([q, items]) => (
-                  <tr key={q} className="border-b border-neutral-900">
-                    <td className="px-4 py-4 font-mono text-sm tracking-wide text-neutral-400">{q}</td>
-                    <td className="px-4 py-4 text-neutral-200">{items}</td>
-                  </tr>
+            <SectionHead eyebrow="Where we go together" title="A potential roadmap, 2026 to 2027." />
+            <div className="pt-4">
+              <div className="grid grid-cols-4">
+                {[0, 1, 2, 3].map((i) => (
+                  <div key={i} className="flex items-center">
+                    <div className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#D2A62C]" />
+                    {i < 3 && <div className="h-px flex-1 bg-neutral-700" />}
+                  </div>
                 ))}
-              </tbody>
-            </table>
-            <Note>Every milestone builds on the platform that already exists. None of it requires starting over.</Note>
+              </div>
+              <div className="mt-6 grid grid-cols-4 gap-10">
+                {([
+                  ['Q3 2026', ['Biocare', 'Tiger Dermatology', 'Brand governance']],
+                  ['Q4 2026', ['Product ecosystem expansion', 'Division enhancements']],
+                  ['Q1 2027', ['Acquisition onboarding framework']],
+                  ['Q2 2027', ['AI-enabled content operations']],
+                ] as [string, string[]][]).map(([q, items]) => (
+                  <div key={q} className="flex flex-col gap-4">
+                    <span className="font-mono text-sm tracking-wide text-white">{q}</span>
+                    <div className="flex flex-col gap-3 border-t border-neutral-800 pt-4">
+                      {items.map((it) => (
+                        <span key={it} className="text-base leading-snug text-neutral-300">{it}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <Note>An illustrative path, not a commitment. Every initiative builds on the platform that already exists, and none requires starting over.</Note>
           </Frame>
         </Slide>
 
@@ -479,8 +504,10 @@ function Frame({ page, children }: { page: string; children: React.ReactNode }) 
   return (
     <div className="relative h-full bg-[#0a0a0a]">
       <div className="flex h-full flex-col gap-10 px-24 pt-20 pb-20">{children}</div>
-      <span className="absolute bottom-8 left-24 font-mono text-[11px] tracking-widest text-neutral-700">{page}</span>
-      <Wordmark />
+      <div className="absolute bottom-8 right-24 flex items-center gap-6">
+        <span className="font-mono text-[11px] tracking-[0.4em] text-[#D2A62C]">BTTR</span>
+        <span className="font-mono text-[11px] tracking-widest text-neutral-700">{page}</span>
+      </div>
     </div>
   )
 }
