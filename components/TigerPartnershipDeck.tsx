@@ -371,17 +371,16 @@ export const TigerPartnershipDeck = () => {
               </div>
               <div className="flex flex-col justify-center gap-5">
                 <div className="flex items-end justify-between border-b border-neutral-800 pb-3">
-                  <span className="text-sm text-neutral-400">Delivered value</span>
-                  <span className="font-mono text-2xl font-bold text-white">$288,250</span>
-                </div>
-                <div className="flex items-end justify-between border-b border-neutral-800 pb-3">
                   <span className="text-sm text-neutral-400">Settled to date</span>
-                  <span className="font-mono text-2xl font-bold text-white">93.3%</span>
+                  <span className="font-mono text-3xl font-bold text-white">93.3%</span>
                 </div>
                 <div className="flex items-end justify-between rounded-lg bg-[#D2A62C]/10 px-4 py-3">
                   <span className="text-sm text-neutral-300">Outstanding</span>
-                  <span className="font-mono text-2xl font-bold text-[#D2A62C]">$19,375 &middot; 6.7%</span>
+                  <span className="font-mono text-3xl font-bold text-[#D2A62C]">$19,375 &middot; 6.7%</span>
                 </div>
+                <p className="text-xs leading-relaxed text-neutral-500">
+                  A single administrative item against a fully deployed platform.
+                </p>
               </div>
             </div>
             <p className="max-w-4xl text-sm leading-relaxed text-neutral-500">
