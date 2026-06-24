@@ -106,7 +106,7 @@ export const TigerPartnershipDeck = () => {
           <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
             <Label>Where this goes next</Label>
             <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
-              What changes when the platform meets a single, accountable owner
+              What changes when the Tiger Digital Ecosystem meets a single, accountable team.
             </h2>
             <div className="flex flex-col gap-4">
               {[
