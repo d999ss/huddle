@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, Fragment } from 'react'
 
 const TOTAL_SLIDES = 13
 
@@ -101,43 +101,33 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 1: Agenda — the four questions */}
+        {/* 1: Agenda */}
         <Slide index={1} current={current}>
-          <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
-            <Label>What you asked for</Label>
-            <h2 className="text-5xl font-bold text-white">Your four questions, answered first.</h2>
+          <SlideBody>
+            <Header eyebrow="What you asked for" title="Your four questions, answered first." />
             <div className="grid grid-cols-2 gap-5">
               {[
-                ['01', 'Services delivered', 'Everything purchased, built, and live today'],
+                ['01', 'Services delivered', 'Everything built and live today'],
                 ['02', 'The CMS platform', 'What it runs, and what it was designed to support'],
                 ['03', 'Hosting & infrastructure', 'How it is hosted, secured, and scaled'],
                 ['04', 'Technical designs', 'The design system, repositories, and foundation'],
               ].map(([num, title, desc]) => (
-                <div key={num} className="flex gap-4 rounded-xl border border-neutral-800 bg-neutral-900 p-5">
+                <div key={num} className="flex gap-4 rounded-xl border border-neutral-800 bg-neutral-900 p-6">
                   <span className="font-mono text-sm text-[#D2A62C]">{num}</span>
                   <div className="flex flex-col gap-1">
                     <h3 className="text-base font-semibold text-white">{title}</h3>
-                    <p className="text-xs text-neutral-500">{desc}</p>
+                    <p className="text-sm text-neutral-400">{desc}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <p className="text-sm text-neutral-400">
-              We will answer all four, then show where the platform goes from here.
-            </p>
-          </div>
+          </SlideBody>
         </Slide>
 
         {/* 2: Q1 — Services delivered */}
         <Slide index={2} current={current}>
-          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
-            <div className="flex items-center gap-4">
-              <Badge>01</Badge>
-              <div className="flex flex-col">
-                <Label>Services delivered</Label>
-                <h2 className="text-4xl font-bold text-white">Everything purchased is built and live today.</h2>
-              </div>
-            </div>
+          <SlideBody>
+            <BadgeHeader num="01" eyebrow="Services delivered" title="Everything is built and live today." />
             <div className="grid grid-cols-3 gap-5">
               {[
                 ['Corporate platform', 'Tiger BioSciences ecosystem site, launched December 2025'],
@@ -147,30 +137,22 @@ export const TigerPartnershipDeck = () => {
                 ['Brand & imagery', 'Unified visual system and ongoing art direction'],
                 ['Ongoing support', 'Daily development and creative support'],
               ].map(([t, d]) => (
-                <div key={t} className="flex flex-col gap-1.5 rounded-xl border border-neutral-800 bg-neutral-900 p-5">
-                  <h3 className="text-sm font-semibold text-white">{t}</h3>
-                  <p className="text-xs leading-relaxed text-neutral-500">{d}</p>
+                <div key={t} className="flex flex-col gap-2 rounded-xl border border-neutral-800 bg-neutral-900 p-6">
+                  <h3 className="text-base font-semibold text-white">{t}</h3>
+                  <p className="text-sm leading-relaxed text-neutral-400">{d}</p>
                 </div>
               ))}
             </div>
-            <p className="max-w-4xl text-sm leading-relaxed text-neutral-400">
-              A complete platform in production today, not a project in progress.
-            </p>
-          </div>
+            <Footer>A complete platform in production today, not a project in progress.</Footer>
+          </SlideBody>
         </Slide>
 
         {/* 3: Q2 — The CMS platform */}
         <Slide index={3} current={current}>
-          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
-            <div className="flex items-center gap-4">
-              <Badge>02</Badge>
-              <div className="flex flex-col">
-                <Label>The CMS platform</Label>
-                <h2 className="text-4xl font-bold text-white">A custom enterprise CMS, built to carry every brand.</h2>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-8">
-              <div className="flex flex-col gap-2.5">
+          <SlideBody>
+            <BadgeHeader num="02" eyebrow="The CMS platform" title="A custom enterprise CMS, built to carry every brand." />
+            <div className="grid grid-cols-2 gap-10">
+              <div className="flex flex-col gap-3.5">
                 {[
                   'Bespoke, secure headless CMS on Sanity',
                   'Multi-brand, multi-division content model',
@@ -179,31 +161,25 @@ export const TigerPartnershipDeck = () => {
                 ].map((t) => (
                   <div key={t} className="flex items-center gap-3">
                     <Check className="text-[#D2A62C]" />
-                    <span className="text-sm text-neutral-300">{t}</span>
+                    <span className="text-base text-neutral-200">{t}</span>
                   </div>
                 ))}
               </div>
               <div className="flex flex-col gap-3 rounded-xl border border-[#D2A62C]/30 bg-[#D2A62C]/10 p-6">
                 <span className="font-mono text-xs uppercase tracking-widest text-[#D2A62C]">The commitment</span>
-                <p className="text-sm leading-relaxed text-neutral-200">
+                <p className="text-base leading-relaxed text-neutral-200">
                   Architected from day one for multiple brands, business units, and acquisitions. Standing up a
                   new brand is configuration, not reconstruction.
                 </p>
               </div>
             </div>
-          </div>
+          </SlideBody>
         </Slide>
 
         {/* 4: Q3 — Hosting & infrastructure */}
         <Slide index={4} current={current}>
-          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
-            <div className="flex items-center gap-4">
-              <Badge>03</Badge>
-              <div className="flex flex-col">
-                <Label>Hosting &amp; infrastructure</Label>
-                <h2 className="text-4xl font-bold text-white">Enterprise hosting, secured and built to scale.</h2>
-              </div>
-            </div>
+          <SlideBody>
+            <BadgeHeader num="03" eyebrow="Hosting & infrastructure" title="Enterprise hosting, secured and built to scale." />
             <div className="grid grid-cols-4 gap-6">
               {[
                 ['99.99%', 'Uptime SLA on redundant infrastructure'],
@@ -213,34 +189,26 @@ export const TigerPartnershipDeck = () => {
               ].map(([stat, label]) => (
                 <div key={label} className="flex flex-col gap-1">
                   <span className="text-2xl font-semibold text-[#D2A62C]">{stat}</span>
-                  <span className="text-xs leading-relaxed text-neutral-500">{label}</span>
+                  <span className="text-sm leading-relaxed text-neutral-400">{label}</span>
                 </div>
               ))}
             </div>
-            <div className="flex flex-wrap gap-x-8 gap-y-2 pt-1">
+            <div className="flex flex-col gap-3">
               {['Twice-daily backups with full redundancy', 'Cloudflare DNS, DDoS protection, IP blocking', 'CI/CD with automated deploys and preview environments'].map((t) => (
-                <div key={t} className="flex items-center gap-2">
+                <div key={t} className="flex items-center gap-3">
                   <Check className="text-[#D2A62C]" />
-                  <span className="text-sm text-neutral-300">{t}</span>
+                  <span className="text-base text-neutral-200">{t}</span>
                 </div>
               ))}
             </div>
-            <p className="max-w-4xl text-sm leading-relaxed text-neutral-400">
-              The reliability and security of an in-house platform team, carried entirely by Bttr.
-            </p>
-          </div>
+            <Footer>The reliability and security of an in-house platform team, carried entirely by Bttr.</Footer>
+          </SlideBody>
         </Slide>
 
         {/* 5: Q4 — Technical designs */}
         <Slide index={5} current={current}>
-          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
-            <div className="flex items-center gap-4">
-              <Badge>04</Badge>
-              <div className="flex flex-col">
-                <Label>Technical designs</Label>
-                <h2 className="text-4xl font-bold text-white">A documented design system and technical foundation.</h2>
-              </div>
-            </div>
+          <SlideBody>
+            <BadgeHeader num="04" eyebrow="Technical designs" title="A documented design system and technical foundation." />
             <div className="grid grid-cols-4 gap-6">
               {[
                 ['6', 'GitHub repositories under active management'],
@@ -250,48 +218,26 @@ export const TigerPartnershipDeck = () => {
               ].map(([stat, label]) => (
                 <div key={label} className="flex flex-col gap-1">
                   <span className="text-2xl font-semibold text-[#D2A62C]">{stat}</span>
-                  <span className="text-xs leading-relaxed text-neutral-500">{label}</span>
+                  <span className="text-sm leading-relaxed text-neutral-400">{label}</span>
                 </div>
               ))}
             </div>
-            <div className="flex flex-wrap gap-x-8 gap-y-2 pt-1">
+            <div className="flex flex-col gap-3">
               {['Governance and ownership model', 'Production workflows across teams', 'Documented and ready to extend'].map((t) => (
-                <div key={t} className="flex items-center gap-2">
+                <div key={t} className="flex items-center gap-3">
                   <Check className="text-[#D2A62C]" />
-                  <span className="text-sm text-neutral-300">{t}</span>
+                  <span className="text-base text-neutral-200">{t}</span>
                 </div>
               ))}
             </div>
-            <p className="max-w-4xl text-sm leading-relaxed text-neutral-400">
-              New work arrives on-brand and on-architecture by default, not by cleanup.
-            </p>
-          </div>
+            <Footer>New work arrives on-brand and on-architecture by default, not by cleanup.</Footer>
+          </SlideBody>
         </Slide>
 
-        {/* 6: The reframe */}
+        {/* 6: The shift */}
         <Slide index={6} current={current}>
-          <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
-            <Label>The real question</Label>
-            <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
-              The question isn&rsquo;t whether to rebuild.
-            </h2>
-            <p className="max-w-4xl text-2xl leading-relaxed text-neutral-300">
-              It&rsquo;s whether it&rsquo;s worth paying to build it all again.
-            </p>
-            <p className="max-w-4xl text-sm leading-relaxed text-neutral-500">
-              The platform is already built, already paid for, and running in production today. Starting over
-              doesn&rsquo;t save money. It spends the same investment a second time, for the same result a year from now.
-            </p>
-          </div>
-        </Slide>
-
-        {/* 7: The shift */}
-        <Slide index={7} current={current}>
-          <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
-            <Label>Where this goes next</Label>
-            <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
-              What changes when the Tiger Digital Ecosystem meets a single, accountable team.
-            </h2>
+          <SlideBody>
+            <Header eyebrow="Where this goes next" title="What changes when the Tiger Digital Ecosystem meets a single, accountable team." />
             <div className="flex flex-col gap-4">
               {[
                 ['One decision line', 'One owner, one direction. Choices stop stalling in committee.'],
@@ -302,23 +248,20 @@ export const TigerPartnershipDeck = () => {
                 <div key={title} className="flex items-center gap-5">
                   <Badge>{String(i + 1)}</Badge>
                   <div>
-                    <p className="font-semibold text-white">{title}</p>
-                    <p className="text-sm text-neutral-500">{desc}</p>
+                    <p className="text-base font-semibold text-white">{title}</p>
+                    <p className="text-sm text-neutral-400">{desc}</p>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+          </SlideBody>
         </Slide>
 
-        {/* 8: A normal month */}
-        <Slide index={8} current={current}>
-          <div className="flex h-full flex-col justify-center gap-9 bg-[#0a0a0a] px-20">
-            <div className="flex flex-col gap-1">
-              <Label>The partnership today</Label>
-              <h2 className="text-4xl font-bold text-white">This is a normal month.</h2>
-            </div>
-            <div className="grid grid-cols-3 gap-10">
+        {/* 7: A normal month */}
+        <Slide index={7} current={current}>
+          <SlideBody>
+            <Header eyebrow="The partnership today" title="This is a normal month." />
+            <div className="grid grid-cols-3 gap-10 pt-2">
               {[
                 ['~40', 'emails a month', 'most answered the same day'],
                 ['8+', 'requests delivered a month', 'on a flat retainer'],
@@ -327,26 +270,67 @@ export const TigerPartnershipDeck = () => {
                 <div key={label} className="flex flex-col gap-2">
                   <span className="text-8xl font-bold leading-none tracking-tight text-[#D2A62C]">{stat}</span>
                   <span className="text-lg font-semibold text-white">{label}</span>
-                  <span className="text-sm text-neutral-500">{sub}</span>
+                  <span className="text-sm text-neutral-400">{sub}</span>
                 </div>
               ))}
             </div>
-            <p className="max-w-5xl text-base leading-relaxed text-neutral-400">
+            <Footer>
               Over six months: <span className="text-white">230+ emails</span>,{' '}
               <span className="text-white">50+ requests delivered</span>, across{' '}
               <span className="text-white">every division</span> and 15+ stakeholders, coordinated by one team,
               plus a portfolio-wide brand system delivered at no charge.
-            </p>
-          </div>
+            </Footer>
+          </SlideBody>
+        </Slide>
+
+        {/* 8: The totality */}
+        <Slide index={8} current={current}>
+          <SlideBody>
+            <Header eyebrow="The work, in full" title="Six months, broken down to the last request." />
+            <div className="grid grid-cols-2 gap-12">
+              <div className="flex flex-col gap-2">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500">50+ requests, by type</span>
+                {([['Imagery', 9], ['Homepage', 8], ['Meetings', 7], ['Press releases', 5], ['Admin', 5], ['Product pages', 4], ['Brand system', 4], ['Bug fixes', 3], ['Copy', 2], ['New business', 2], ['New build', 1]] as [string, number][]).map(([t, c]) => (
+                  <div key={t} className="flex items-center gap-3">
+                    <div className="h-1.5 rounded-full bg-[#D2A62C]/70" style={{ width: `${c * 16}px` }} />
+                    <span className="text-sm text-neutral-300">{t}</span>
+                    <span className="font-mono text-xs text-neutral-600">{c}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-col justify-center gap-8">
+                <div className="grid grid-cols-2 gap-5">
+                  {[['230+', 'Individual emails'], ['50+', 'Requests delivered'], ['15+', 'Stakeholders served'], ['Every', 'Division and brand']].map(([s, l]) => (
+                    <div key={l} className="flex flex-col">
+                      <span className="text-3xl font-bold text-[#D2A62C]">{s}</span>
+                      <span className="text-xs text-neutral-500">{l}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col gap-2">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500">Requests by month</span>
+                  <div className="flex items-end gap-3">
+                    {([['Dec', 4], ['Jan', 8], ['Feb', 7], ['Mar', 8], ['Apr', 10], ['May', 8], ['Jun', 5]] as [string, number][]).map(([m, v]) => (
+                      <div key={m} className="flex flex-1 flex-col items-center gap-1.5">
+                        <div className="flex h-24 w-full items-end">
+                          <div className="w-full rounded-t bg-[#D2A62C]/70" style={{ height: `${v * 10}%` }} />
+                        </div>
+                        <span className="font-mono text-[10px] text-neutral-400">{v}</span>
+                        <span className="font-mono text-[10px] text-neutral-600">{m}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Footer>Every item itemized at makebttr.com/activity-log</Footer>
+          </SlideBody>
         </Slide>
 
         {/* 9: Investment summary */}
         <Slide index={9} current={current}>
-          <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
-            <Label>Tiger investment summary</Label>
-            <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">
-              The asset is deployed. One administrative item remains.
-            </h2>
+          <SlideBody>
+            <Header eyebrow="Tiger investment summary" title="The asset is deployed. One administrative item remains." />
             <div className="grid grid-cols-[1.2fr_1fr] gap-12">
               <div className="flex flex-col gap-2.5">
                 <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500">Platform assets delivered</span>
@@ -383,18 +367,17 @@ export const TigerPartnershipDeck = () => {
                 </div>
               </div>
             </div>
-            <p className="max-w-4xl text-sm leading-relaxed text-neutral-500">
+            <Footer>
               The platform is operational. Bringing the account current closes the final administrative items and
               lets focus return to growth.
-            </p>
-          </div>
+            </Footer>
+          </SlideBody>
         </Slide>
 
         {/* 10: Next six months */}
         <Slide index={10} current={current}>
-          <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
-            <Label>The next six months</Label>
-            <h2 className="text-5xl font-bold text-white">What the next six months deliver, without spending again</h2>
+          <SlideBody>
+            <Header eyebrow="The next six months" title="What the next six months deliver, without spending again." />
             <div className="grid grid-cols-2 gap-x-10 gap-y-5">
               {[
                 ['Acquisitions onboarded in weeks', 'Not quarters. New companies plug into the existing platform.'],
@@ -407,41 +390,45 @@ export const TigerPartnershipDeck = () => {
                 <div key={t} className="flex gap-3">
                   <Check className="mt-0.5 text-[#D2A62C]" />
                   <div>
-                    <p className="font-semibold text-white">{t}</p>
-                    <p className="text-sm text-neutral-500">{d}</p>
+                    <p className="text-base font-semibold text-white">{t}</p>
+                    <p className="text-sm text-neutral-400">{d}</p>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+          </SlideBody>
         </Slide>
 
         {/* 11: Roadmap */}
         <Slide index={11} current={current}>
-          <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
-            <Label>Where we go together</Label>
-            <h2 className="text-5xl font-bold text-white">The Tiger roadmap, 2026 &ndash; 2027</h2>
-            <div className="grid grid-cols-4 gap-5">
-              {[
+          <SlideBody>
+            <Header eyebrow="Where we go together" title="The Tiger roadmap, 2026 to 2027." />
+            <div className="flex items-stretch gap-3">
+              {([
                 ['Q3 2026', ['Biocare', 'Tiger Dermatology', 'Brand governance']],
                 ['Q4 2026', ['Product ecosystem expansion', 'Division enhancements']],
                 ['Q1 2027', ['Acquisition onboarding framework']],
                 ['Q2 2027', ['AI-enabled content operations']],
-              ].map(([q, items]) => (
-                <div key={q as string} className="flex flex-col gap-3 rounded-xl border border-neutral-800 bg-neutral-900 p-5">
-                  <span className="font-mono text-xs uppercase tracking-widest text-[#D2A62C]">{q as string}</span>
-                  <div className="flex flex-col gap-2">
-                    {(items as string[]).map((it) => (
-                      <span key={it} className="text-sm leading-snug text-neutral-300">{it}</span>
-                    ))}
+              ] as [string, string[]][]).map(([q, items], i) => (
+                <Fragment key={q}>
+                  <div className="flex flex-1 flex-col gap-3 rounded-xl border border-neutral-800 bg-neutral-900 p-5">
+                    <span className="font-mono text-xs uppercase tracking-widest text-[#D2A62C]">{q}</span>
+                    <div className="flex flex-col gap-2">
+                      {items.map((it) => (
+                        <span key={it} className="text-sm leading-snug text-neutral-300">{it}</span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                  {i < 3 && (
+                    <div className="flex items-center">
+                      <span className="text-2xl text-[#D2A62C]/60">&rarr;</span>
+                    </div>
+                  )}
+                </Fragment>
               ))}
             </div>
-            <p className="max-w-4xl text-sm leading-relaxed text-neutral-500">
-              Every milestone builds on the platform that already exists. None of it requires starting over.
-            </p>
-          </div>
+            <Footer>Every milestone builds on the platform that already exists. None of it requires starting over.</Footer>
+          </SlideBody>
         </Slide>
 
         {/* 12: Close */}
@@ -510,6 +497,35 @@ export const TigerPartnershipDeck = () => {
 function Slide({ index, current, children }: { index: number; current: number; children: React.ReactNode }) {
   if (index !== current) return null
   return <div className="absolute inset-0">{children}</div>
+}
+
+function SlideBody({ children }: { children: React.ReactNode }) {
+  return <div className="flex h-full flex-col justify-start gap-10 bg-[#0a0a0a] px-20 pt-24 pb-16">{children}</div>
+}
+
+function Header({ eyebrow, title }: { eyebrow: string; title: string }) {
+  return (
+    <div className="flex flex-col gap-3">
+      <Label>{eyebrow}</Label>
+      <h2 className="max-w-5xl text-5xl font-bold leading-tight text-white">{title}</h2>
+    </div>
+  )
+}
+
+function BadgeHeader({ num, eyebrow, title }: { num: string; eyebrow: string; title: string }) {
+  return (
+    <div className="flex items-start gap-4">
+      <Badge>{num}</Badge>
+      <div className="flex flex-col gap-2">
+        <Label>{eyebrow}</Label>
+        <h2 className="max-w-5xl text-4xl font-bold leading-tight text-white">{title}</h2>
+      </div>
+    </div>
+  )
+}
+
+function Footer({ children }: { children: React.ReactNode }) {
+  return <p className="max-w-5xl text-sm leading-relaxed text-neutral-400">{children}</p>
 }
 
 function Label({ children }: { children: React.ReactNode }) {
