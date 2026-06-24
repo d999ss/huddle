@@ -354,7 +354,7 @@ export const TigerPartnershipDeck = () => {
         {/* 9: Investment summary */}
         <Slide index={9} current={current}>
           <Frame page="10">
-            <SectionHead eyebrow="Investment summary" title="The asset is deployed. One administrative item remains." />
+            <SectionHead eyebrow="Investment summary" title="Open balance." />
             <div className="grid grid-cols-2 gap-16">
               <div className="flex flex-col gap-3">
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">Platform assets delivered</span>
@@ -365,13 +365,12 @@ export const TigerPartnershipDeck = () => {
                 </div>
               </div>
               <div className="flex flex-col justify-center">
-                <span className="mb-4 font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">The one outstanding item</span>
+                <span className="mb-4 font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">The outstanding balance</span>
                 <table className="w-full text-sm">
                   <tbody>
                     {[
-                      ['Creative direction & imagery', '$3,500'],
                       ['Realization phase (final invoice)', '$6,875'],
-                      ['Monthly hosting, April through June', '$9,000'],
+                      ['Monthly hosting, May & June', '$6,000'],
                     ].map(([item, amt]) => (
                       <tr key={item} className="border-b border-neutral-900">
                         <td className="py-2.5 text-neutral-300">{item}</td>
@@ -380,7 +379,7 @@ export const TigerPartnershipDeck = () => {
                     ))}
                     <tr className="bg-white/[0.03]">
                       <td className="py-3 font-medium text-white">Outstanding</td>
-                      <td className="py-3 text-right font-mono text-lg font-semibold text-white">$19,375</td>
+                      <td className="py-3 text-right font-mono text-lg font-semibold text-white">$12,875</td>
                     </tr>
                   </tbody>
                 </table>

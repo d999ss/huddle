@@ -194,7 +194,7 @@ export const TigerActivityLog = () => {
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-neutral-300">
             A dedicated development and creative team carried this volume for six straight months on a flat
             $3,000 monthly retainer. The work scaled well beyond what that retainer was designed to cover, the
-            Phase 2 statement of work ($136,750) was never signed, and $19,375 remains outstanding. The level of
+            Phase 2 statement of work ($136,750) was never signed, and $12,875 remains outstanding. The level of
             effort delivered here was, in practice, far beyond what was billed.
           </p>
         </div>
