@@ -87,7 +87,7 @@ export const TigerPartnershipDeck = () => {
               <div className="flex flex-col gap-4">
                 <Label>Tiger BioSciences &times; Bttr</Label>
                 <h1 className="max-w-3xl text-5xl font-bold leading-tight tracking-tight text-white">
-                  One platform.<br />Every brand.<br />Built to scale.
+                  One platform. Every brand.<br />Built to scale.
                 </h1>
               </div>
               <div className="flex flex-col items-end gap-2 text-right">
