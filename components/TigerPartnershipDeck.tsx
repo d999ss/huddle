@@ -304,7 +304,7 @@ export const TigerPartnershipDeck = () => {
             <SectionHead eyebrow="The work, in full" title="What it actually took." />
             <div className="flex gap-20 border-t border-neutral-800 pt-6">
               {[
-                ['1,362 hrs', 'Platform build, 2025'],
+                ['1,362 hrs', 'Platform build, 2026'],
                 ['Thousands', 'Requests & changes'],
                 ['230+', 'Email threads'],
                 ['Every', 'Division & brand'],
@@ -317,7 +317,7 @@ export const TigerPartnershipDeck = () => {
             </div>
             <div className="grid grid-cols-2 gap-16 pt-2">
               <div className="flex flex-col gap-3">
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">The build · Oct to Dec 2025</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">The build · 2026</span>
                 <table className="w-full text-sm">
                   <tbody>
                     {([['Phase 1 · Foundation', '270 hrs'], ['Phase 2 · Realization', '770 hrs'], ['Phase 3 · Optimization', '322 hrs']] as [string, string][]).map(([p, h]) => (
@@ -332,7 +332,7 @@ export const TigerPartnershipDeck = () => {
                     </tr>
                   </tbody>
                 </table>
-                <span className="text-xs leading-relaxed text-neutral-500">A full enterprise platform, launched December 2025.</span>
+                <span className="text-xs leading-relaxed text-neutral-500">A full enterprise platform, delivered in 2026.</span>
               </div>
               <div className="flex flex-col gap-3">
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">Then run every week since</span>
@@ -345,7 +345,7 @@ export const TigerPartnershipDeck = () => {
               </div>
             </div>
             <Note>
-              A complete platform built last year, then run and extended every week since. Every item itemized at
+              A complete platform built this year, then run and extended every week since. Every item itemized at
               makebttr.com/activity-log.
             </Note>
           </Frame>
