@@ -494,7 +494,7 @@ export const TigerPartnershipDeck = () => {
                 </thead>
                 <tbody className="divide-y divide-neutral-800">
                   {[
-                    ['SOW 1 — Corporate Site & CMS Platform', '$250,000', 'Paid in full'],
+                    ['SOW 1 — Corporate Site & CMS Platform', '—', 'Paid in full'],
                     ['SOW 2 — Managed Hosting, Scale Tier', '$3,000 / mo', 'Active'],
                     ['SOW 3 — Art Direction & Dermatology', '$3,500', 'Paid in full'],
                     ['SOW 4 — Site Refinement + Brand Readiness', '$13,750', 'Phase 1 paid'],
@@ -509,7 +509,7 @@ export const TigerPartnershipDeck = () => {
               </table>
             </div>
             <p className="text-sm text-neutral-400">
-              More than <span className="font-semibold text-white">$270,000</span> contracted across the relationship, nearly all paid in full.
+              The full corporate platform plus ongoing hosting, art direction, and refinement — nearly all paid in full.
             </p>
           </div>
         </Slide>
