@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, Fragment } from 'react'
 
-const TOTAL_SLIDES = 13
+const TOTAL_SLIDES = 14
 
 export const TigerPartnershipDeck = () => {
   const [current, setCurrent] = useState(0)
@@ -122,7 +122,7 @@ export const TigerPartnershipDeck = () => {
             <SectionHead eyebrow="Services delivered" title="Everything is built and live today." />
             <div className="grid grid-cols-5 gap-8">
               {([
-                ['Platform', ['Custom Sanity CMS', 'Multi-brand model', 'AWS + Vercel hosting', 'CI/CD & staging', 'Security & backups', 'Cloudflare DNS + DDoS', 'Image pipeline & CDN', 'Role-based editing']],
+                ['Platform', ['Custom Sanity CMS', 'Multi-brand model', 'AWS + Google Cloud hosting', 'CI/CD & staging', 'Security & backups', 'Cloudflare DNS + DDoS', 'Image pipeline & CDN', 'Role-based editing']],
                 ['Corporate site', ['Ecosystem homepage', 'Company & companies', 'Leadership & people', 'News & press room', 'Careers & contact', 'Donation', 'Vision & values', 'Global navigation & IA']],
                 ['Divisions', ['Wound Care', 'Aesthetics', 'Tissue Processing', 'International', 'Expertise pages', 'Dermatology landing', 'Division taxonomy', 'Cross-division routing']],
                 ['Products & science', ['Full product library', 'Product detail pages', 'Pipeline & publications', 'Clinical evidence', 'Research & gallery', 'Mechanism of action', 'Regulatory status', 'Treatment protocols']],
@@ -188,7 +188,7 @@ export const TigerPartnershipDeck = () => {
             </div>
             <div className="grid grid-cols-3 gap-12">
               {([
-                ['Infrastructure', ['AWS + Vercel premium hosting', 'Multi-region delivery', 'Auto-scaling + failover', 'Custom CDN logic', 'Dedicated environment isolation']],
+                ['Infrastructure', ['AWS + Google Cloud premium hosting', 'Multi-region delivery', 'Auto-scaling + failover', 'Custom CDN logic', 'Dedicated environment isolation']],
                 ['Security & compliance', ['SOC 2 / HIPAA readiness', 'SSL across all endpoints', 'Cloudflare DNS + DDoS', 'IP blocking', 'Biannual compliance review']],
                 ['Operations & support', ['Full CI/CD with previews', 'CRM / ERP / API integrations', 'AI-driven SEO audits', 'Dedicated Technical Account Manager', 'Dedicated Slack incident channel']],
               ] as [string, string[]][]).map(([cat, items]) => (
@@ -298,9 +298,89 @@ export const TigerPartnershipDeck = () => {
           </Frame>
         </Slide>
 
-        {/* 8: The totality */}
+        {/* 8: Signed engagements */}
         <Slide index={8} current={current}>
           <Frame page="09">
+            <SectionHead eyebrow="The commercial record" title="Three engagements, each scoped and signed." />
+            <div className="flex flex-col">
+              <div className="grid grid-cols-12 gap-6 border-b border-neutral-800 pb-3">
+                {([
+                  ['Engagement', 'col-span-4'],
+                  ['Value', 'col-span-1'],
+                  ['Sponsor', 'col-span-3'],
+                  ['Timeframe', 'col-span-2'],
+                  ['Status', 'col-span-2 text-right'],
+                ] as [string, string][]).map(([label, span]) => (
+                  <span key={label} className={`${span} font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500`}>{label}</span>
+                ))}
+              </div>
+              {([
+                {
+                  n: '02',
+                  title: 'Hosting & Maintenance · Scale Tier',
+                  href: '/docs/SOW-02-Hosting-and-Maintenance-Scale-Tier.pdf',
+                  value: '$3,000/mo',
+                  sponsor: 'Steve Kulp',
+                  timeframe: 'Dec 2025 – present',
+                  status: 'Active',
+                  outstanding: false,
+                },
+                {
+                  n: '03',
+                  title: 'Art Direction & Dermatology',
+                  href: '/docs/SOW-03-Art-Direction-and-Dermatology.pdf',
+                  value: '$3,500',
+                  sponsor: 'Hunter Zudans',
+                  timeframe: 'Jan – Feb 2026',
+                  status: 'Paid in full',
+                  outstanding: false,
+                },
+                {
+                  n: '04',
+                  title: 'Site Refinement + Brand Readiness',
+                  href: '/docs/SOW-04-Site-Refinement-and-Brand-Readiness.pdf',
+                  value: '$13,750',
+                  sponsor: 'Carmen Traub · design / Hunter Zudans',
+                  timeframe: 'Jan 2026 – present',
+                  status: 'Phase 1 paid · Phase 2 outstanding',
+                  outstanding: true,
+                },
+              ] as { n: string; title: string; href: string; value: string; sponsor: string; timeframe: string; status: string; outstanding: boolean }[]).map((sow) => (
+                <div key={sow.n} className="grid grid-cols-12 items-center gap-6 border-b border-neutral-900 py-4">
+                  <div className="col-span-4 flex flex-col gap-1">
+                    <div className="flex items-baseline gap-3">
+                      <span className="font-mono text-xs text-[#D2A62C]">SOW {sow.n}</span>
+                      <span className="text-base font-medium leading-snug text-white">{sow.title}</span>
+                    </div>
+                    <a
+                      href={sow.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-fit font-mono text-[11px] tracking-wide text-neutral-500 underline-offset-4 transition-colors hover:text-[#D2A62C] hover:underline"
+                    >
+                      View signed copy ↗
+                    </a>
+                  </div>
+                  <span className="col-span-1 font-mono text-sm text-neutral-300">{sow.value}</span>
+                  <span className="col-span-3 text-sm leading-snug text-neutral-400">{sow.sponsor}</span>
+                  <span className="col-span-2 text-sm text-neutral-400">{sow.timeframe}</span>
+                  <span className={`col-span-2 text-right text-sm font-medium ${sow.outstanding ? 'text-[#D2A62C]' : 'text-neutral-300'}`}>
+                    {sow.status}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <Note>
+              All signed under the Master Services Agreement dated September 24, 2025 — fixed-fee, senior-led, no
+              hourly billing. Everything is paid and delivered except the second half of SOW 4, currently in review
+              with Carmen.
+            </Note>
+          </Frame>
+        </Slide>
+
+        {/* 9: The totality */}
+        <Slide index={9} current={current}>
+          <Frame page="10">
             <SectionHead eyebrow="The work, in full" title="What it actually took." />
             <div className="flex gap-20 border-t border-neutral-800 pt-6">
               {[
@@ -351,9 +431,9 @@ export const TigerPartnershipDeck = () => {
           </Frame>
         </Slide>
 
-        {/* 9: Investment summary */}
-        <Slide index={9} current={current}>
-          <Frame page="10">
+        {/* 10: Investment summary */}
+        <Slide index={10} current={current}>
+          <Frame page="11">
             <SectionHead eyebrow="Investment summary" title="Open balance." />
             <div className="grid grid-cols-2 gap-16">
               <div className="flex flex-col gap-3">
@@ -392,9 +472,9 @@ export const TigerPartnershipDeck = () => {
           </Frame>
         </Slide>
 
-        {/* 10: Next six months */}
-        <Slide index={10} current={current}>
-          <Frame page="11">
+        {/* 11: Next six months */}
+        <Slide index={11} current={current}>
+          <Frame page="12">
             <SectionHead eyebrow="The next six months" title="What the next six months deliver, without spending again." />
             <div className="grid grid-cols-2 gap-x-16 gap-y-6 border-t border-neutral-800 pt-6">
               {[
@@ -414,9 +494,9 @@ export const TigerPartnershipDeck = () => {
           </Frame>
         </Slide>
 
-        {/* 11: Roadmap */}
-        <Slide index={11} current={current}>
-          <Frame page="12">
+        {/* 12: Roadmap */}
+        <Slide index={12} current={current}>
+          <Frame page="13">
             <SectionHead eyebrow="Where we go together" title="A potential roadmap, 2026 to 2027." />
             <div className="pt-4">
               <div className="grid grid-cols-4">
@@ -449,8 +529,8 @@ export const TigerPartnershipDeck = () => {
           </Frame>
         </Slide>
 
-        {/* 12: Close */}
-        <Slide index={12} current={current}>
+        {/* 13: Close */}
+        <Slide index={13} current={current}>
           <div className="relative flex h-full flex-col items-center justify-center gap-6 bg-[#0a0a0a] px-24 text-center">
             <h2 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-white">
               The platform is built. The governance is defined.<br />The foundation is proven.
