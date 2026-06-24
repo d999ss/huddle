@@ -81,9 +81,9 @@ export const TigerPartnershipDeck = () => {
             <div className="relative flex flex-col gap-5 px-24 pb-28">
               <h1 className="max-w-4xl text-6xl font-semibold leading-[1.05] tracking-tight">
                 <span className="text-white">Tiger BioSciences </span>
-                <span className="text-neutral-500">Digital Platform Review</span>
+                <span className="text-neutral-500">Platform Review</span>
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-neutral-400">
+              <p className="max-w-2xl text-lg leading-relaxed text-balance text-neutral-400">
                 More than a website. Six months of decisions, infrastructure, and institutional knowledge.
               </p>
             </div>
@@ -125,7 +125,7 @@ export const TigerPartnershipDeck = () => {
                 ['Corporate site', ['Ecosystem homepage', 'Company & companies', 'Leadership & people', 'News & press room', 'Careers & contact', 'Donation', 'Vision & values', 'Global navigation & IA']],
                 ['Divisions', ['Wound Care', 'Aesthetics', 'Tissue Processing', 'International', 'Expertise pages', 'Dermatology landing', 'Division taxonomy', 'Cross-division routing']],
                 ['Products & science', ['Full product library', 'Product detail pages', 'Pipeline & publications', 'Clinical evidence', 'Research & gallery', 'Mechanism of action', 'Regulatory status', 'Treatment protocols']],
-                ['Brand & operations', ['Visual brand system', 'Brand book & style guide', 'Logo & circle-logo system', 'Division logo set', 'Unified photography', 'Press publishing system', 'Survey integration', 'Daily dev + creative']],
+                ['Brand & operations', ['Brand design system', 'Brand guidelines', 'Logo suite', 'Division logos', 'Photography & art direction', 'Press release publishing', 'Survey tools', 'Ongoing dev & design']],
               ] as [string, string[]][]).map(([cat, items]) => (
                 <div key={cat} className="flex flex-col gap-4">
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">{cat}</span>
@@ -144,7 +144,7 @@ export const TigerPartnershipDeck = () => {
         {/* 3: Q2 — The CMS platform */}
         <Slide index={3} current={current}>
           <Frame page="04">
-            <SectionHead eyebrow="The CMS platform" title="A custom enterprise CMS, built to carry every brand." />
+            <SectionHead eyebrow="The CMS platform" title="A Tiger Enterprise CMS, built to carry every brand." />
             <div className="grid grid-cols-3 gap-12">
               {([
                 ['Content model', ['Product & Company document types', 'Structured, typed fields', 'References keep brands in sync', 'Modeled once, reused everywhere', 'Slug-based clean routing']],
@@ -251,14 +251,14 @@ export const TigerPartnershipDeck = () => {
             <SectionHead eyebrow="Where this goes next" title="What changes when the Tiger Digital Ecosystem meets a single, accountable team." />
             <div className="grid grid-cols-2 gap-x-16 gap-y-7 border-t border-neutral-800 pt-6">
               {[
-                ['One decision line', 'One owner, one direction. Choices stop stalling in committee.'],
-                ['Governed brand system', 'A consistent voice and one standard across every brand.'],
-                ['Incremental roadmap', 'New brands and products ship on top of what exists, not from scratch.'],
-                ['Clear ownership', 'One team accountable for the whole platform, top to bottom.'],
+                ['One decision line', 'One owner and one direction, so creative and technical calls get made quickly instead of stalling across a committee. Decisions land, work ships, and momentum compounds week over week.'],
+                ['Governed brand system', 'A single voice, one visual standard, and shared components enforced across every brand and division. The ecosystem stays coherent as it grows, without constant cleanup or drift.'],
+                ['Incremental roadmap', 'New brands, products, and experiences ship on top of the platform that already exists. Each addition is configuration on a proven foundation, not another rebuild from scratch.'],
+                ['Clear ownership', 'One accountable team owns uptime, security, performance, and the roadmap end to end, instead of fragmented vendors pointing at each other when something breaks.'],
               ].map(([title, desc]) => (
-                <div key={title} className="flex flex-col gap-1.5">
+                <div key={title} className="flex flex-col gap-2">
                   <p className="text-xl font-medium text-white">{title}</p>
-                  <p className="text-base text-neutral-400">{desc}</p>
+                  <p className="max-w-xl text-base leading-relaxed text-neutral-400">{desc}</p>
                 </div>
               ))}
             </div>
@@ -271,7 +271,7 @@ export const TigerPartnershipDeck = () => {
             <SectionHead eyebrow="The partnership today" title="This is a normal month." />
             <div className="grid grid-cols-3 gap-12 border-t border-neutral-800 pt-8">
               {[
-                ['~40', 'emails a month', 'most answered the same day'],
+                ['~40', 'emails a month', 'answered the same day'],
                 ['8+', 'requests delivered a month', 'on a flat retainer'],
                 ['$0', 'in rush fees or change orders', 'every launch deadline met'],
               ].map(([stat, label, sub]) => (
@@ -300,53 +300,53 @@ export const TigerPartnershipDeck = () => {
         {/* 8: The totality */}
         <Slide index={8} current={current}>
           <Frame page="09">
-            <SectionHead eyebrow="The work, in full" title="Six months, broken down to the last request." />
-            <div className="grid grid-cols-[1.3fr_1fr] gap-16">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-neutral-800/70 text-left text-neutral-300">
-                    <th className="px-3 py-2 font-normal">Request type</th>
-                    <th className="px-3 py-2 text-right font-normal">Count</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {([['Imagery', 9], ['Homepage', 8], ['Meetings', 7], ['Press releases', 5], ['Admin', 5], ['Product pages', 4], ['Brand system', 4], ['Bug fixes', 3], ['Copy', 2], ['New business', 2], ['New build', 1]] as [string, number][]).map(([t, c]) => (
-                    <tr key={t} className="border-b border-neutral-900">
-                      <td className="px-3 py-[7px] text-neutral-300">{t}</td>
-                      <td className="px-3 py-[7px] text-right font-mono text-neutral-300">{c}</td>
-                    </tr>
-                  ))}
-                  <tr className="bg-white/[0.03]">
-                    <td className="px-3 py-2 font-medium text-white">Total requests</td>
-                    <td className="px-3 py-2 text-right font-mono font-medium text-white">50</td>
-                  </tr>
-                </tbody>
-              </table>
-              <div className="flex flex-col justify-between gap-8">
-                <div className="grid grid-cols-2 gap-x-8 gap-y-5">
-                  {[['230+', 'Individual emails'], ['50+', 'Requests delivered'], ['15+', 'Stakeholders served'], ['Every', 'Division and brand']].map(([s, l]) => (
-                    <div key={l} className="flex flex-col">
-                      <span className="text-3xl font-semibold tracking-tight text-white">{s}</span>
-                      <span className="text-xs text-neutral-500">{l}</span>
-                    </div>
-                  ))}
+            <SectionHead eyebrow="The work, in full" title="What it actually took." />
+            <div className="flex gap-20 border-t border-neutral-800 pt-6">
+              {[
+                ['1,362 hrs', 'Platform build, 2025'],
+                ['Thousands', 'Requests & changes'],
+                ['230+', 'Email threads'],
+                ['Every', 'Division & brand'],
+              ].map(([s, l]) => (
+                <div key={l} className="flex flex-col gap-1.5">
+                  <span className="text-4xl font-semibold tracking-tight text-white">{s}</span>
+                  <span className="text-sm text-neutral-500">{l}</span>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">Requests by month</span>
-                  <div className="flex items-end gap-3 border-t border-neutral-800 pt-3">
-                    {([['Dec', 4], ['Jan', 8], ['Feb', 7], ['Mar', 8], ['Apr', 10], ['May', 8], ['Jun', 5]] as [string, number][]).map(([m, v]) => (
-                      <div key={m} className="flex flex-1 flex-col items-center gap-1.5">
-                        <div className="flex h-20 w-full items-end">
-                          <div className="w-full bg-neutral-600" style={{ height: `${v * 10}%` }} />
-                        </div>
-                        <span className="font-mono text-[10px] text-neutral-500">{m}</span>
-                      </div>
+              ))}
+            </div>
+            <div className="grid grid-cols-2 gap-16 pt-2">
+              <div className="flex flex-col gap-3">
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">The build · Oct to Dec 2025</span>
+                <table className="w-full text-sm">
+                  <tbody>
+                    {([['Phase 1 · Foundation', '270 hrs'], ['Phase 2 · Realization', '770 hrs'], ['Phase 3 · Optimization', '322 hrs']] as [string, string][]).map(([p, h]) => (
+                      <tr key={p} className="border-b border-neutral-900">
+                        <td className="py-2.5 text-neutral-300">{p}</td>
+                        <td className="py-2.5 text-right font-mono text-neutral-300">{h}</td>
+                      </tr>
                     ))}
-                  </div>
+                    <tr className="bg-white/[0.03]">
+                      <td className="py-2.5 font-medium text-white">Total build</td>
+                      <td className="py-2.5 text-right font-mono font-semibold text-white">1,362 hrs</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <span className="text-xs leading-relaxed text-neutral-500">A full enterprise platform, launched December 2025.</span>
+              </div>
+              <div className="flex flex-col gap-3">
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">Then run every week since</span>
+                <div className="grid grid-cols-2 gap-x-8 gap-y-2.5 border-t border-neutral-800 pt-4">
+                  {['Press releases', 'Homepage iterations', 'Product pages', 'Imagery & assets', 'Bug fixes & QA', 'Copy & content', 'Brand system', 'New initiatives'].map((it) => (
+                    <span key={it} className="text-sm text-neutral-300">{it}</span>
+                  ))}
                 </div>
+                <span className="text-xs leading-relaxed text-neutral-500">Thousands of individual requests, edits, and changes, turned around same-day.</span>
               </div>
             </div>
-            <Note>Every item itemized at makebttr.com/activity-log</Note>
+            <Note>
+              A complete platform built last year, then run and extended every week since. Every item itemized at
+              makebttr.com/activity-log.
+            </Note>
           </Frame>
         </Slide>
 
@@ -398,16 +398,16 @@ export const TigerPartnershipDeck = () => {
             <SectionHead eyebrow="The next six months" title="What the next six months deliver, without spending again." />
             <div className="grid grid-cols-2 gap-x-16 gap-y-6 border-t border-neutral-800 pt-6">
               {[
-                ['Acquisitions onboarded in weeks', 'Not quarters. New companies plug into the existing platform.'],
-                ['New brands from existing infrastructure', 'Launch a brand without building a new stack each time.'],
-                ['One source of truth for products', 'Every division pulling from the same structured library.'],
-                ['Consistent governance', 'One brand, one standard, enforced across the ecosystem.'],
-                ['Reduced operational overhead', 'Fewer vendors, fewer handoffs, fewer surprises.'],
-                ['Built to keep compounding', 'Each addition is cheaper and faster than the last.'],
+                ['Acquisitions onboarded in weeks', 'New companies plug into the platform that already exists instead of starting a build from zero. What used to take quarters becomes a matter of weeks, on infrastructure Tiger already owns.'],
+                ['New brands from existing infrastructure', 'Stand up a new brand on the shared stack without commissioning a new website, CMS, or hosting each time. The hard engineering is done, so launches are configuration, not construction.'],
+                ['One source of truth for products', 'Every division pulls from the same structured product library, so a change made once is correct everywhere. No duplicated content and no drift between sites.'],
+                ['Consistent governance', 'One brand voice and one visual standard enforced across the ecosystem, with compliance built into the content model. Growth never comes at the cost of consistency or control.'],
+                ['Reduced operational overhead', 'Fewer vendors, fewer handoffs, and fewer surprises, with one accountable team carrying all of it. Less coordination cost for Tiger and a lower total cost of ownership.'],
+                ['Built to keep compounding', 'Because each addition builds on the last, the platform gets faster and cheaper to extend over time. The early investment keeps paying off rather than resetting.'],
               ].map(([t, d]) => (
-                <div key={t} className="flex flex-col gap-1.5">
+                <div key={t} className="flex flex-col gap-2">
                   <p className="text-lg font-medium text-white">{t}</p>
-                  <p className="text-sm text-neutral-400">{d}</p>
+                  <p className="max-w-xl text-sm leading-relaxed text-neutral-400">{d}</p>
                 </div>
               ))}
             </div>
@@ -453,7 +453,7 @@ export const TigerPartnershipDeck = () => {
         <Slide index={12} current={current}>
           <div className="relative flex h-full flex-col items-center justify-center gap-6 bg-[#0a0a0a] px-24 text-center">
             <h2 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-white">
-              The platform is built. The governance is defined. The foundation is proven.
+              The platform is built. The governance is defined.<br />The foundation is proven.
             </h2>
             <p className="text-xl text-neutral-400">The next phase isn&rsquo;t reconstruction. It&rsquo;s growth.</p>
             <span className="absolute bottom-8 left-24 font-mono text-[11px] tracking-[0.2em] text-neutral-600">

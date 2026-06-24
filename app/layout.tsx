@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Tiger BioSciences — Digital Platform Review',
+  title: 'Tiger BioSciences — Platform Review',
   description: 'More than a website: six months of decisions, infrastructure, and institutional knowledge.',
   robots: { index: false, follow: false },
 }
