@@ -841,19 +841,6 @@ export const TigerPartnershipDeck = () => {
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </button>
 
-          <div className="absolute bottom-3 left-1/2 flex max-w-[88vw] -translate-x-1/2 flex-wrap items-center justify-center gap-1.5">
-            {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`h-1.5 rounded-full transition-all ${
-                  i === current ? 'w-6 bg-[#D2A62C]' : 'w-1.5 bg-neutral-700 hover:bg-neutral-500'
-                }`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
-          </div>
-
           <div className="absolute bottom-3 right-4 font-mono text-xs text-neutral-600">
             {current + 1} / {TOTAL_SLIDES}
           </div>
