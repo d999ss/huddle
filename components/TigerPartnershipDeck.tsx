@@ -121,17 +121,17 @@ export const TigerPartnershipDeck = () => {
             <SectionHead eyebrow="Services delivered" title="Everything is built and live today." />
             <div className="grid grid-cols-5 gap-8">
               {([
-                ['Corporate site', ['Ecosystem homepage', 'Company & companies', 'Leadership & people', 'News & press room', 'Careers, contact, donation']],
-                ['Divisions', ['Wound Care', 'Aesthetics', 'Tissue Processing', 'International', 'Expertise pages']],
-                ['Products & science', ['Full product library', 'Product detail pages', 'Pipeline & publications', 'Clinical evidence', 'Research & gallery']],
-                ['Platform', ['Custom Sanity CMS', 'Multi-brand model', 'AWS + Vercel hosting', 'CI/CD & staging', 'Security & backups']],
-                ['Brand & operations', ['Visual brand system', 'Brand book & style guide', 'Press publishing system', 'Survey integration', 'Daily dev + creative']],
+                ['Corporate site', ['Ecosystem homepage', 'Company & companies', 'Leadership & people', 'News & press room', 'Careers & contact', 'Donation', 'Vision & values', 'Global navigation & IA']],
+                ['Divisions', ['Wound Care', 'Aesthetics', 'Tissue Processing', 'International', 'Expertise pages', 'Dermatology landing', 'Division taxonomy', 'Cross-division routing']],
+                ['Products & science', ['Full product library', 'Product detail pages', 'Pipeline & publications', 'Clinical evidence', 'Research & gallery', 'Mechanism of action', 'Regulatory status', 'Treatment protocols']],
+                ['Platform', ['Custom Sanity CMS', 'Multi-brand model', 'AWS + Vercel hosting', 'CI/CD & staging', 'Security & backups', 'Cloudflare DNS + DDoS', 'Image pipeline & CDN', 'Role-based editing']],
+                ['Brand & operations', ['Visual brand system', 'Brand book & style guide', 'Logo & circle-logo system', 'Division logo set', 'Unified photography', 'Press publishing system', 'Survey integration', 'Daily dev + creative']],
               ] as [string, string[]][]).map(([cat, items]) => (
-                <div key={cat} className="flex flex-col gap-3">
+                <div key={cat} className="flex flex-col gap-4">
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">{cat}</span>
-                  <div className="flex flex-col gap-2.5 border-t border-neutral-800 pt-3">
+                  <div className="flex flex-col gap-3.5 border-t border-neutral-800 pt-4">
                     {items.map((it) => (
-                      <span key={it} className="text-sm leading-snug text-neutral-300">{it}</span>
+                      <span key={it} className="text-base leading-snug text-neutral-300">{it}</span>
                     ))}
                   </div>
                 </div>
@@ -145,25 +145,26 @@ export const TigerPartnershipDeck = () => {
         <Slide index={3} current={current}>
           <Frame page="04">
             <SectionHead eyebrow="The CMS platform" title="A custom enterprise CMS, built to carry every brand." />
-            <div className="grid grid-cols-2 gap-16">
-              <ul className="flex flex-col gap-4 border-t border-neutral-800 pt-5">
-                {[
-                  'Bespoke, secure headless CMS on Sanity',
-                  'Multi-brand, multi-division content model',
-                  'FDA, regulatory, and clinical fields structured and required',
-                  'Role-based editing with clear ownership',
-                ].map((t) => (
-                  <li key={t} className="text-lg text-neutral-200">{t}</li>
-                ))}
-              </ul>
-              <div className="flex flex-col gap-3 border-t border-neutral-800 pt-5">
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">The commitment</span>
-                <p className="text-lg leading-relaxed text-neutral-300">
-                  Architected from day one for multiple brands, business units, and acquisitions. Standing up a
-                  new brand is configuration, not reconstruction.
-                </p>
-              </div>
+            <div className="grid grid-cols-3 gap-12">
+              {([
+                ['Content model', ['Product & Company document types', 'Structured, typed fields', 'References keep brands in sync', 'Modeled once, reused everywhere', 'Slug-based clean routing']],
+                ['Regulated by design', ['FDA status', 'Regulatory status', 'Mechanism of action', 'Clinical validation & evidence', 'Intended use', 'Treatment protocols']],
+                ['Editorial & governance', ['Required-field validation', 'Role-based editing & ownership', 'Art-directed image pipeline', 'GROQ + Vision querying', 'Headless API to any channel', 'Draft and publish workflow']],
+              ] as [string, string[]][]).map(([cat, items]) => (
+                <div key={cat} className="flex flex-col gap-4">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">{cat}</span>
+                  <div className="flex flex-col gap-3.5 border-t border-neutral-800 pt-4">
+                    {items.map((it) => (
+                      <span key={it} className="text-base leading-snug text-neutral-300">{it}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
+            <Note>
+              Architected from day one for multiple brands, business units, and acquisitions. Standing up a new
+              brand is configuration, not reconstruction.
+            </Note>
           </Frame>
         </Slide>
 
