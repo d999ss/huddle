@@ -1,14 +1,38 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const TOTAL_SLIDES = 22
 
 export const TigerPartnershipDeck = () => {
   const [current, setCurrent] = useState(0)
   const [printMode, setPrintMode] = useState(false)
+  const [scale, setScale] = useState(1)
+  const touchX = useRef<number | null>(null)
   const prev = () => setCurrent((c) => Math.max(c - 1, 0))
   const next = () => setCurrent((c) => Math.min(c + 1, TOTAL_SLIDES - 1))
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchX.current = e.touches[0]?.clientX ?? null
+  }
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchX.current == null) return
+    const dx = (e.changedTouches[0]?.clientX ?? 0) - touchX.current
+    if (dx < -45) next()
+    else if (dx > 45) prev()
+    touchX.current = null
+  }
+
+  useEffect(() => {
+    const fit = () => setScale(Math.min(window.innerWidth / 1280, window.innerHeight / 720))
+    fit()
+    window.addEventListener('resize', fit)
+    window.addEventListener('orientationchange', fit)
+    return () => {
+      window.removeEventListener('resize', fit)
+      window.removeEventListener('orientationchange', fit)
+    }
+  }, [])
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
@@ -33,11 +57,22 @@ export const TigerPartnershipDeck = () => {
   }, [])
 
   return (
-    <div className="flex h-screen w-screen flex-col items-center justify-center gap-4 bg-black">
+    <div
+      className="relative flex h-[100dvh] w-screen items-center justify-center overflow-hidden bg-black"
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+    >
       {printMode && (
         <style dangerouslySetInnerHTML={{ __html: '[aria-labelledby="cookie-wall-title"]{display:none!important}' }} />
       )}
-      <div className="relative aspect-video w-full max-w-[1280px] overflow-hidden rounded-sm shadow-2xl">
+      <div
+        className="relative shrink-0 overflow-hidden bg-[#0a0a0a] shadow-2xl"
+        style={
+          printMode
+            ? { width: 1280, height: 720 }
+            : { width: 1280, height: 720, transform: `scale(${scale})`, transformOrigin: 'center center' }
+        }
+      >
 
         {/* 0: Cover */}
         <Slide index={0} current={current}>
@@ -52,7 +87,7 @@ export const TigerPartnershipDeck = () => {
               <div className="flex flex-col gap-4">
                 <Label>Tiger BioSciences &times; Bttr</Label>
                 <h1 className="max-w-3xl text-5xl font-bold leading-tight tracking-tight text-white">
-                  The hard part is behind us. The growth is ahead.
+                  Everything we have built. Everything that comes next.
                 </h1>
               </div>
               <div className="flex flex-col items-end gap-2 text-right">
@@ -769,42 +804,45 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* Nav dots */}
-        <div className={`absolute bottom-4 left-0 right-0 flex items-center justify-center gap-1.5 ${printMode ? 'hidden' : ''}`}>
-          {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`h-1.5 rounded-full transition-all ${
-                i === current ? 'w-6 bg-[#D2A62C]' : 'w-1.5 bg-neutral-700 hover:bg-neutral-500'
-              }`}
-            />
-          ))}
-        </div>
+      </div>
 
-        {/* Counter */}
-        <div className={`absolute bottom-4 right-6 font-mono text-xs text-neutral-600 ${printMode ? 'hidden' : ''}`}>
-          {current + 1} / {TOTAL_SLIDES}
-        </div>
-      </div>
-      <div className={`flex w-full max-w-[1280px] items-center justify-between px-1 ${printMode ? 'hidden' : ''}`}>
-        <button
-          onClick={prev}
-          disabled={current === 0}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-800 bg-neutral-900 text-neutral-400 transition-all hover:border-neutral-600 hover:text-white disabled:opacity-20 disabled:cursor-not-allowed"
-          aria-label="Previous slide"
-        >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-        </button>
-        <button
-          onClick={next}
-          disabled={current === TOTAL_SLIDES - 1}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-800 bg-neutral-900 text-neutral-400 transition-all hover:border-neutral-600 hover:text-white disabled:opacity-20 disabled:cursor-not-allowed"
-          aria-label="Next slide"
-        >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-        </button>
-      </div>
+      {!printMode && (
+        <>
+          <button
+            onClick={prev}
+            disabled={current === 0}
+            className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-800 bg-neutral-900/80 text-neutral-300 backdrop-blur transition-all hover:text-white disabled:opacity-20"
+            aria-label="Previous slide"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </button>
+          <button
+            onClick={next}
+            disabled={current === TOTAL_SLIDES - 1}
+            className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-800 bg-neutral-900/80 text-neutral-300 backdrop-blur transition-all hover:text-white disabled:opacity-20"
+            aria-label="Next slide"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </button>
+
+          <div className="absolute bottom-3 left-1/2 flex max-w-[88vw] -translate-x-1/2 flex-wrap items-center justify-center gap-1.5">
+            {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === current ? 'w-6 bg-[#D2A62C]' : 'w-1.5 bg-neutral-700 hover:bg-neutral-500'
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          <div className="absolute bottom-3 right-4 font-mono text-xs text-neutral-600">
+            {current + 1} / {TOTAL_SLIDES}
+          </div>
+        </>
+      )}
     </div>
   )
 }
