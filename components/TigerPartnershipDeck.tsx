@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 
-const TOTAL_SLIDES = 22
+const TOTAL_SLIDES = 21
 
 export const TigerPartnershipDeck = () => {
   const [current, setCurrent] = useState(0)
@@ -196,34 +196,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 4: Visual proof gallery */}
+        {/* 4: (2) Enterprise CMS */}
         <Slide index={4} current={current}>
-          <div className="flex h-full flex-col bg-[#0a0a0a]">
-            <div className="grid h-full grid-cols-4 grid-rows-2 gap-1">
-              {[
-                '/assets/work/uploads/2024/08/tiger-biosciences-hero.webp',
-                '/assets/work/uploads/2024/08/tiger-biosciences-platform.webp',
-                '/assets/work/uploads/2024/08/tiger-wound-care.webp',
-                '/assets/work/uploads/2024/08/tiger-aesthetics.webp',
-                '/assets/work/uploads/2024/08/tiger-viality.webp',
-                '/assets/work/uploads/2024/08/tiger-alloclae.jpg',
-                '/assets/work/uploads/2024/08/tiger-acapatch.jpg',
-                '/assets/work/uploads/2024/08/tiger-products.jpg',
-              ].map((src, i) => (
-                <div key={i} className="relative overflow-hidden bg-neutral-900">
-                  <img src={src} alt="" className="absolute inset-0 h-full w-full object-cover" />
-                </div>
-              ))}
-            </div>
-            <div className="absolute bottom-8 left-20">
-              <Label>Live today</Label>
-              <p className="mt-1 text-lg font-semibold text-white">One platform. Every division, product, and brand.</p>
-            </div>
-          </div>
-        </Slide>
-
-        {/* 5: (2) Enterprise CMS */}
-        <Slide index={5} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <div className="flex items-center gap-4">
               <Badge>02</Badge>
@@ -263,8 +237,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 6: CMS deep-dive — content architecture */}
-        <Slide index={6} current={current}>
+        {/* 5: CMS deep-dive — content architecture */}
+        <Slide index={5} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <div className="flex flex-col gap-1">
               <Label>Custom CMS &middot; Content architecture</Label>
@@ -307,8 +281,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 7: CMS deep-dive — regulated content model */}
-        <Slide index={7} current={current}>
+        {/* 6: CMS deep-dive — regulated content model */}
+        <Slide index={6} current={current}>
           <div className="flex h-full flex-col justify-center gap-6 bg-[#0a0a0a] px-20">
             <div className="flex flex-col gap-1">
               <Label>Custom CMS &middot; Regulated content model</Label>
@@ -340,8 +314,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 8: CMS deep-dive — editorial & governance */}
-        <Slide index={8} current={current}>
+        {/* 7: CMS deep-dive — editorial & governance */}
+        <Slide index={7} current={current}>
           <div className="flex h-full flex-col justify-center gap-6 bg-[#0a0a0a] px-20">
             <div className="flex flex-col gap-1">
               <Label>Custom CMS &middot; How the team works in it</Label>
@@ -368,8 +342,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 9: (3) Hosting */}
-        <Slide index={9} current={current}>
+        {/* 8: (3) Hosting */}
+        <Slide index={8} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <div className="flex items-center gap-4">
               <Badge>03</Badge>
@@ -404,8 +378,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 10: (4) Design system & foundation */}
-        <Slide index={10} current={current}>
+        {/* 9: (4) Design system & foundation */}
+        <Slide index={9} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <div className="flex items-center gap-4">
               <Badge>04</Badge>
@@ -434,8 +408,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 11: Scale Tier governance scope */}
-        <Slide index={11} current={current}>
+        {/* 10: Scale Tier governance scope */}
+        <Slide index={10} current={current}>
           <div className="flex h-full flex-col justify-center gap-5 bg-[#0a0a0a] px-20 py-10">
             <div className="flex flex-col gap-1">
               <Label>Scale Tier &middot; Per signed SOW 10/10/2025</Label>
@@ -480,8 +454,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 12: The economics */}
-        <Slide index={12} current={current}>
+        {/* 11: The economics */}
+        <Slide index={11} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <Label>The economics</Label>
             <h2 className="text-5xl font-bold text-white">What $36K a year actually buys</h2>
@@ -507,8 +481,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 13: Engagements */}
-        <Slide index={13} current={current}>
+        {/* 12: Engagements */}
+        <Slide index={12} current={current}>
           <div className="flex h-full flex-col justify-center gap-6 bg-[#0a0a0a] px-20">
             <div className="flex flex-col gap-1">
               <Label>The engagement &middot; MSA September 24, 2025</Label>
@@ -565,8 +539,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 14: Beyond scope */}
-        <Slide index={14} current={current}>
+        {/* 13: Beyond scope */}
+        <Slide index={13} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <div className="flex flex-col gap-1">
               <Label>Beyond the contract</Label>
@@ -592,8 +566,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 15: Request volume */}
-        <Slide index={15} current={current}>
+        {/* 14: Request volume */}
+        <Slide index={14} current={current}>
           <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
             <div className="flex flex-col gap-1">
               <Label>Six months of inbound</Label>
@@ -619,8 +593,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 16: What the requests were */}
-        <Slide index={16} current={current}>
+        {/* 15: What the requests were */}
+        <Slide index={15} current={current}>
           <div className="flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
             <div className="flex flex-col gap-1">
               <Label>What they asked for</Label>
@@ -657,8 +631,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 17: Responsiveness */}
-        <Slide index={17} current={current}>
+        {/* 16: Responsiveness */}
+        <Slide index={16} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <div className="flex flex-col gap-1">
               <Label>Responsiveness</Label>
@@ -686,8 +660,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 18: Breadth */}
-        <Slide index={18} current={current}>
+        {/* 17: Breadth */}
+        <Slide index={17} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <div className="flex flex-col gap-1">
               <Label>Breadth</Label>
@@ -716,8 +690,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 19: Account standing */}
-        <Slide index={19} current={current}>
+        {/* 18: Account standing */}
+        <Slide index={18} current={current}>
           <div className="flex h-full flex-col justify-center gap-12 bg-[#0a0a0a] px-20">
             <div className="flex flex-col gap-3">
               <Label>Account standing</Label>
@@ -762,8 +736,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 20: What forward looks like */}
-        <Slide index={20} current={current}>
+        {/* 19: What forward looks like */}
+        <Slide index={19} current={current}>
           <div className="flex h-full flex-col justify-center gap-7 bg-[#0a0a0a] px-20">
             <Label>What forward looks like</Label>
             <h2 className="max-w-4xl text-5xl font-bold leading-tight text-white">
@@ -788,8 +762,8 @@ export const TigerPartnershipDeck = () => {
           </div>
         </Slide>
 
-        {/* 21: Close */}
-        <Slide index={21} current={current}>
+        {/* 20: Close */}
+        <Slide index={20} current={current}>
           <div className="relative flex h-full flex-col justify-center gap-8 bg-[#0a0a0a] px-20">
             <div
               className="absolute inset-0 opacity-[0.04]"
