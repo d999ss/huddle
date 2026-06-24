@@ -87,7 +87,7 @@ export const TigerPartnershipDeck = () => {
               <div className="flex flex-col gap-4">
                 <Label>Tiger BioSciences &times; Bttr</Label>
                 <h1 className="max-w-3xl text-5xl font-bold leading-tight tracking-tight text-white">
-                  Everything we have built. Everything that comes next.
+                  One platform. Every brand. What comes next.
                 </h1>
               </div>
               <div className="flex flex-col items-end gap-2 text-right">
@@ -546,6 +546,22 @@ export const TigerPartnershipDeck = () => {
             <p className="text-sm text-neutral-400">
               The full corporate platform plus ongoing hosting, art direction, and refinement — nearly all paid in full.
             </p>
+            <div className="flex flex-wrap items-center gap-2.5">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-500">Documents</span>
+              {[
+                ['Hosting invoice · NNVA11CH-0008', '/docs/BTTR-INV-NNVA11CH-0008.pdf'],
+              ].map(([label, href]) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-neutral-700 px-3 py-1 text-xs text-neutral-300 transition-colors hover:border-[#D2A62C] hover:text-white"
+                >
+                  {label} ↗
+                </a>
+              ))}
+            </div>
           </div>
         </Slide>
 
