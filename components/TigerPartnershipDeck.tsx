@@ -171,26 +171,40 @@ export const TigerPartnershipDeck = () => {
         {/* 4: Q3 — Hosting & infrastructure */}
         <Slide index={4} current={current}>
           <Frame page="05">
-            <SectionHead eyebrow="Hosting & infrastructure" title="Enterprise hosting, secured and built to scale." />
-            <div className="grid grid-cols-4 gap-10 border-t border-neutral-800 pt-6">
+            <SectionHead eyebrow="Hosting & infrastructure · Scale Tier" title="Enterprise hosting, secured and built to scale." />
+            <div className="flex gap-14 border-t border-neutral-800 pt-4">
               {[
-                ['99.99%', 'Uptime SLA on redundant infrastructure'],
-                ['SOC 2 + HIPAA', 'Readiness alignment for regulated data'],
-                ['24 / 7', 'Monitoring, sub-2-hour incident response'],
-                ['AWS + Vercel', 'Multi-region delivery with failover'],
+                ['99.99%', 'Uptime SLA'],
+                ['< 2 hr', 'Incident response'],
+                ['24 / 7', 'Monitoring'],
+                ['Twice daily', 'Backups'],
               ].map(([stat, label]) => (
-                <div key={label} className="flex flex-col gap-2">
-                  <span className="text-3xl font-semibold tracking-tight text-white">{stat}</span>
-                  <span className="text-sm leading-relaxed text-neutral-400">{label}</span>
+                <div key={label} className="flex flex-col">
+                  <span className="text-2xl font-semibold tracking-tight text-white">{stat}</span>
+                  <span className="text-xs text-neutral-500">{label}</span>
                 </div>
               ))}
             </div>
-            <div className="flex gap-10 text-sm text-neutral-400">
-              <span>Twice-daily backups with full redundancy</span>
-              <span>Cloudflare DNS, DDoS protection, IP blocking</span>
-              <span>CI/CD with automated deploys and preview environments</span>
+            <div className="grid grid-cols-3 gap-12">
+              {([
+                ['Infrastructure', ['AWS + Vercel premium hosting', 'Multi-region delivery', 'Auto-scaling + failover', 'Custom CDN logic', 'Dedicated environment isolation']],
+                ['Security & compliance', ['SOC 2 / HIPAA readiness', 'SSL across all endpoints', 'Cloudflare DNS + DDoS', 'IP blocking', 'Biannual compliance review']],
+                ['Operations & support', ['Full CI/CD with previews', 'CRM / ERP / API integrations', 'AI-driven SEO audits', 'Dedicated Technical Account Manager', 'Dedicated Slack incident channel']],
+              ] as [string, string[]][]).map(([cat, items]) => (
+                <div key={cat} className="flex flex-col gap-4">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">{cat}</span>
+                  <div className="flex flex-col gap-3 border-t border-neutral-800 pt-4">
+                    {items.map((it) => (
+                      <span key={it} className="text-base leading-snug text-neutral-300">{it}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-            <Note>The reliability and security of an in-house platform team, carried entirely by Bttr.</Note>
+            <Note>
+              The Scale Tier is the top of three service tiers, selected by Tiger and renewed quarterly. Unlimited
+              support, monthly executive reporting, and a dedicated account manager included.
+            </Note>
           </Frame>
         </Slide>
 
