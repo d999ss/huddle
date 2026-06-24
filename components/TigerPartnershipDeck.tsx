@@ -150,7 +150,7 @@ export const TigerPartnershipDeck = () => {
               {([
                 ['Content model', ['Product & Company document types', 'Structured, typed fields', 'References keep brands in sync', 'Modeled once, reused everywhere', 'Slug-based clean routing']],
                 ['Regulated by design', ['FDA status', 'Regulatory status', 'Mechanism of action', 'Clinical validation & evidence', 'Intended use', 'Treatment protocols']],
-                ['Editorial & governance', ['Required-field validation', 'Role-based editing & ownership', 'Art-directed image pipeline', 'GROQ + Vision querying', 'Headless API to any channel', 'Draft and publish workflow']],
+                ['Editorial & governance', ['Required-field validation', 'Role-based editing & ownership', 'Multi-user team collaboration', 'Secure login and publishing', 'Art-directed image pipeline', 'GROQ + Vision querying', 'Headless API to any channel', 'Draft and publish workflow']],
               ] as [string, string[]][]).map(([cat, items]) => (
                 <div key={cat} className="flex flex-col gap-4">
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">{cat}</span>
