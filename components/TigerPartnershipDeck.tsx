@@ -105,18 +105,18 @@ export const TigerPartnershipDeck = () => {
         <Slide index={1} current={current}>
           <SlideBody>
             <Header eyebrow="What you asked for" title="Your four questions, answered first." />
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 gap-x-16 gap-y-8 pt-2">
               {[
                 ['01', 'Services delivered', 'Everything built and live today'],
                 ['02', 'The CMS platform', 'What it runs, and what it was designed to support'],
                 ['03', 'Hosting & infrastructure', 'How it is hosted, secured, and scaled'],
                 ['04', 'Technical designs', 'The design system, repositories, and foundation'],
               ].map(([num, title, desc]) => (
-                <div key={num} className="flex gap-4 rounded-xl border border-neutral-800 bg-neutral-900 p-6">
-                  <span className="font-mono text-sm text-[#D2A62C]">{num}</span>
-                  <div className="flex flex-col gap-1">
-                    <h3 className="text-base font-semibold text-white">{title}</h3>
-                    <p className="text-sm text-neutral-400">{desc}</p>
+                <div key={num} className="flex items-baseline gap-5 border-b border-neutral-800 pb-5">
+                  <span className="font-mono text-base text-[#D2A62C]">{num}</span>
+                  <div className="flex flex-col gap-1.5">
+                    <h3 className="text-2xl font-semibold text-white">{title}</h3>
+                    <p className="text-base text-neutral-400">{desc}</p>
                   </div>
                 </div>
               ))}
