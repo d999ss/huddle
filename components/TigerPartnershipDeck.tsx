@@ -73,13 +73,13 @@ export const TigerPartnershipDeck = () => {
 
         {/* 0: Cover */}
         <Slide index={0} current={current}>
-          <div className="relative flex h-full items-center justify-center bg-[#0a0a0a]">
-            <video autoPlay muted loop playsInline className="absolute inset-0 h-full w-full scale-[1.03] object-cover opacity-25">
+          <div className="relative flex h-full flex-col justify-end bg-[#0a0a0a]">
+            <video autoPlay muted loop playsInline className="absolute inset-0 h-full w-full scale-[1.03] object-cover opacity-30">
               <source src="/assets/work/uploads/2024/08/tiger-hero.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-[#0a0a0a]/50" />
-            <div className="relative flex flex-col items-center gap-6 text-center">
-              <h1 className="text-5xl font-semibold tracking-tight">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/55 to-transparent" />
+            <div className="relative flex flex-col gap-5 px-24 pb-28">
+              <h1 className="max-w-4xl text-6xl font-semibold leading-[1.05] tracking-tight">
                 <span className="text-white">Tiger BioSciences </span>
                 <span className="text-neutral-500">Digital Platform Review</span>
               </h1>
